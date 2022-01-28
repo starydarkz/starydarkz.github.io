@@ -4,11 +4,11 @@ html {
 
 body{
     margin: 0;
-    background-color: #efefef;
+    background-color: #000000;
 }  
 
 header {
-    background-color: #364552;
+    background-color: #4388c5;
     color: white;
     padding: 2rem 2rem;
 }
@@ -17,6 +17,12 @@ header h1{
     font-size: 4rem;
     text-align: center;
 }
+#titleproy{
+    color: white;
+    font-size: 1.8rem;
+    text-align: left;
+}
+
 #container{
     width: 400px;
     margin: 0 auto;
