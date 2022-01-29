@@ -8,7 +8,7 @@ body{
 }  
 
 header {
-    background-color: hsla(167, 83%, 34%, 0.575);
+    background-color: hsla(167, 83%, 34%, 0.459);
     color: white;
     padding: 2rem 2rem;
 }
@@ -17,17 +17,70 @@ header h1{
     font-size: 4rem;
     text-align: center;
 }
-#titleproy{
-    color: white;
-    background-color: hsla(189, 83%, 34%, 0.199);
-    font-size: 1.8rem;
-    padding: 0.7rem 2rem;
-    text-align: left;
+
+
+
+#container{
+    width: 300px;
     margin: 0 auto;
+} 
+
+section article {
+    transition: all 0.3s ease;
+    background-color: #fff;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0;
+    cursor: pointer;
+}
+
+section article:hover { 
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
+}
+
+section article h2, section article p {
+    margin: 1rem;
+}
+
+footer {
+    background-color: #222;
+    
+    padding: 3rem;
+    color: #fff;
+}
+
+footer section {
+    float: right;
+}
+
+footer p{
+    margin: 0;
+}
+
+
+/* Transisiones links final web */
+footer a{
+    transition: color 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+footer a:hover {
+    color: cornflowerblue;
+}
+
+#menus{
+    background-color: hsla(189, 83%, 34%, 0.199);
+    padding: 1.5rem 1rem;
+
 
 }
 
-#container{
-    width: 400px;
+#menus a{
+    text-decoration: none;
+    font-size: 1.7rem;
+    text-align: left;
+    color: white;
     margin: 0 auto;
-} 
+    padding: 2rem 1rem;
+
+}
