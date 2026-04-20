@@ -27,7 +27,7 @@
     <div class="post-card-meta">
       <span class="post-card-readtime">{{ .Params.readtime }} min</span>
       <div class="post-card-tags">
-        {{ range first 2 .Params.tags }}
+        {{ range first 2 (.Params.tags | default slice) }}
         <span class="ptag">{{ . }}</span>
         {{ end }}
       </div>
