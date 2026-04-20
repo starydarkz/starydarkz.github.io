@@ -1,5 +1,5 @@
 ---
-title: "Análisis de RAT escrito en Python"
+title: "Análisis de RAT escrito en Python 2"
 date: 2024-11-20
 draft: false
 description: "Diseccionando un troyano de acceso remoto: comunicación C2, persistencia y evasión de antivirus."
