@@ -1,0 +1,120 @@
+{{ define "main" }}
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">investigador de seguridad</div>
+    <h1>Explorando el<br><span class="accent">universo digital</span></h1>
+    <p class="hero-sub">{{ .Site.Params.description }}</p>
+    <div class="hero-cta">
+      <a href="/posts/" class="btn-hand btn-main">✦ ver el blog</a>
+      <a href="/proyectos/" class="btn-hand btn-ghost">mis proyectos →</a>
+    </div>
+  </section>
+
+  <svg class="wavy-div" viewBox="0 0 900 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,15 C60,5 120,25 180,15 C240,5 300,25 360,15 C420,5 480,25 540,15 C600,5 660,25 720,15 C780,5 840,25 900,15" fill="none" stroke="#4DFFC4" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+
+  <!-- FEATURED POST -->
+  {{ $featured := where .Site.RegularPages "Params.featured" true }}
+  {{ with index $featured 0 }}
+  {{ $cat := index .Params.categories 0 | default "Web" }}
+  {{ $catSlug := $cat | lower | replaceRE " " "" }}
+  <div class="section-label"><span class="star-bullet">★</span>último post</div>
+  <a href="{{ .RelPermalink }}" class="featured-banner">
+    <div class="feat-label">// investigación reciente</div>
+    <h2 class="feat-title">{{ .Title }}</h2>
+    <p class="feat-desc">{{ .Params.description }}</p>
+    <div class="feat-meta">
+      <span class="feat-cat tag-{{ $catSlug }}">{{ $cat }}</span>
+      <span>{{ .Date.Format "2006-01-02" }}</span>
+      <span>{{ .Params.readtime }} min</span>
+    </div>
+  </a>
+  {{ end }}
+
+  <!-- RECENT POSTS -->
+  <div class="section-label">
+    <span class="star-bullet">✦</span>
+    posts recientes
+    <a href="/posts/" class="section-see-all">ver todos →</a>
+  </div>
+  <div class="posts-grid home-posts-grid">
+    {{ range first 3 (where .Site.RegularPages "Type" "posts") }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+
+  <svg class="wavy-div wavy-div--dashed" viewBox="0 0 900 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,15 C80,25 160,5 240,15 C320,25 400,5 480,15 C560,25 640,5 720,15 C800,25 860,5 900,15" fill="none" stroke="#4DFFC4" stroke-width="1" stroke-linecap="round" stroke-dasharray="4 6"/>
+  </svg>
+
+  <!-- PROJECTS PREVIEW -->
+  <div class="section-label" style="margin-top:8px;">
+    <span class="star-bullet">◈</span>
+    proyectos open source
+    <a href="/proyectos/" class="section-see-all">ver todos →</a>
+  </div>
+  <div class="projects-preview-grid">
+    {{ range first 3 (where .Site.RegularPages "Type" "proyectos") }}
+    <a href="{{ .RelPermalink }}" class="proj-card">
+      <div class="proj-header">
+        <div class="proj-name">{{ .Title }}</div>
+        <div class="proj-lang">{{ .Params.language }}</div>
+      </div>
+      <p class="proj-desc">{{ .Params.description }}</p>
+      <div class="proj-footer">
+        {{ with .Params.stars }}<div class="proj-stars">★ {{ . }}</div>{{ end }}
+        <div class="proj-gh">github →</div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+
+  <svg class="wavy-div" viewBox="0 0 900 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,15 C60,5 120,25 180,15 C240,5 300,25 360,15 C420,5 480,25 540,15 C600,5 660,25 720,15 C780,5 840,25 900,15" fill="none" stroke="#4DFFC4" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+
+  <!-- ABOUT PREVIEW -->
+  <div class="section-label" style="margin-top:8px;">
+    <span class="star-bullet">◇</span>sobre mí
+  </div>
+  <a href="/about/" class="about-preview-card">
+    <div class="about-inner">
+      <div class="about-avatar">🌌</div>
+      <div class="about-text-col">
+        <div class="about-alias"><span class="at">@</span>{{ .Site.Params.author }}</div>
+        <div class="about-role">// {{ .Site.Params.role }}</div>
+        <p class="about-bio-short">{{ .Site.Params.bio | truncate 160 }}</p>
+        <div class="certs-chips">
+          <span class="cert-chip">OSCP</span>
+          <span class="cert-chip">CEH</span>
+          <span class="cert-chip">eJPT</span>
+        </div>
+      </div>
+      <div class="about-stats-col">
+        <div class="stat-badge stat-htb">
+          <span class="stat-lbl">HackTheBox</span>
+          <span class="stat-val">{{ .Site.Params.htb_rank }}</span>
+        </div>
+        <div class="stat-badge stat-thm">
+          <span class="stat-lbl">TryHackMe</span>
+          <span class="stat-val">{{ .Site.Params.thm_rank }}</span>
+        </div>
+        <div class="stat-badge stat-ld">
+          <span class="stat-lbl">LetsDefend</span>
+          <span class="stat-val">{{ .Site.Params.ld_rank }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-links-row">
+      <a class="social-chip chip-li" href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social-chip chip-tg" href="{{ .Site.Params.telegram }}" target="_blank" rel="noopener">Telegram</a>
+      <a class="social-chip chip-gh" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+      <div class="about-cta">ver perfil completo →</div>
+    </div>
+  </a>
+
+</div>
+{{ end }}

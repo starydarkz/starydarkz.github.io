@@ -1,0 +1,95 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="blog-hero">
+    <div class="blog-hero-label">// archivo de investigaciones</div>
+    <h1>El <span class="accent">blog</span></h1>
+    <p>Investigaciones, writeups, análisis de malware y técnicas de red team. Todo documentado desde la trinchera.</p>
+    <div class="blog-stats">
+      <div class="bstat"><strong>{{ len .Site.RegularPages }}</strong> posts</div>
+      <div class="bstat"><strong>6</strong> categorías</div>
+    </div>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <div class="search-box">
+      <span class="search-icon">⌕</span>
+      <input class="search-input" id="search-input" type="text" placeholder="buscar investigaciones, técnicas, herramientas...">
+      <span class="search-clear" id="search-clear">✕ limpiar</span>
+    </div>
+    <div class="search-hint">// busca por título, descripción, tag o categoría</div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters-row">
+    <span class="filter-label">filtrar</span>
+    <button class="filter-btn filter-all active" data-cat="all">✦ todos</button>
+    <button class="filter-btn filter-web" data-cat="web">Web</button>
+    <button class="filter-btn filter-malware" data-cat="malware">Malware</button>
+    <button class="filter-btn filter-redteam" data-cat="redteam">Red Team</button>
+    <button class="filter-btn filter-ctf" data-cat="ctf">CTF</button>
+    <button class="filter-btn filter-crypto" data-cat="crypto">Crypto</button>
+    <button class="filter-btn filter-network" data-cat="network">Network</button>
+  </div>
+
+  <!-- TAGS CLOUD -->
+  <div class="tags-section">
+    <div class="tags-head">tags populares</div>
+    <div class="tags-cloud" id="tags-cloud">
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <span class="tag-item" data-tag="{{ $name | lower }}">
+        {{ $name }}<span class="tag-count">{{ len $taxonomy }}</span>
+      </span>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- RESULTS COUNT -->
+  <div class="results-row">
+    <div class="results-info">mostrando <span id="result-count">{{ len .Pages }}</span> resultados</div>
+    <select class="sort-select" id="sort-select">
+      <option value="newest">// más recientes</option>
+      <option value="oldest">// más antiguos</option>
+      <option value="readtime">// lectura rápida</option>
+    </select>
+  </div>
+
+  <!-- POSTS GRID — embeds JSON data for JS filtering -->
+  <div class="posts-grid" id="posts-grid">
+    {{ range .Paginator.Pages }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+
+  <div class="no-results" id="no-results">
+    <div class="no-results-icon">✦</div>
+    <div class="no-results-text">sin resultados en el cosmos</div>
+    <div class="no-results-sub">// intenta con otras palabras o limpia los filtros</div>
+  </div>
+
+  <!-- Embed posts data for search -->
+  <script>
+  window.POSTS_DATA = [
+    {{ range (where .Site.RegularPages "Type" "posts") }}
+    {
+      title: {{ .Title | jsonify }},
+      desc: {{ .Params.description | default "" | jsonify }},
+      url: {{ .RelPermalink | jsonify }},
+      cat: {{ index .Params.categories 0 | default "Web" | lower | replaceRE " " "" | jsonify }},
+      catLabel: {{ index .Params.categories 0 | default "Web" | jsonify }},
+      tags: {{ .Params.tags | jsonify }},
+      date: {{ .Date.Format "2006-01-02" | jsonify }},
+      readtime: {{ .Params.readtime | default "5" | jsonify }},
+      cover: {{ .Params.cover | default "" | jsonify }},
+      featured: {{ .Params.featured | default false | jsonify }}
+    },
+    {{ end }}
+  ];
+  </script>
+
+  {{ template "_internal/pagination.html" . }}
+
+</div>
+<script src="{{ "js/blog.js" | relURL }}"></script>
+{{ end }}

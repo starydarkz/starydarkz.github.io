@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="container">
+
+  <div class="proyectos-hero">
+    <div class="blog-hero-label">// herramientas open source</div>
+    <h1>Mis <span class="accent">proyectos</span></h1>
+    <p>Herramientas que construí para resolver problemas reales. Todo en GitHub, todo libre.</p>
+    <div class="blog-stats">
+      <div class="bstat"><strong>{{ len .Pages }}</strong> proyectos</div>
+      <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" class="bstat-link">ver en GitHub →</a>
+    </div>
+  </div>
+
+  <div class="filters-row">
+    <span class="filter-label">lenguaje</span>
+    <button class="filter-btn filter-all active" data-lang="all">✦ todos</button>
+    <button class="filter-btn filter-py" data-lang="python">Python</button>
+    <button class="filter-btn filter-go" data-lang="go">Go</button>
+    <button class="filter-btn filter-rust" data-lang="rust">Rust</button>
+    <button class="filter-btn filter-c" data-lang="c">C/C++</button>
+    <button class="filter-btn filter-bash" data-lang="bash">Bash</button>
+  </div>
+
+  <div class="proyectos-grid" id="proyectos-grid">
+    {{ range .Pages }}
+    {{ $langSlug := .Params.language | lower }}
+    <a href="{{ .RelPermalink }}" class="proj-full-card" data-lang="{{ $langSlug }}" data-status="{{ .Params.status }}">
+      {{ if .Params.cover }}
+      <div class="proj-cover">
+        <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy">
+        <div class="proj-cover-overlay"></div>
+      </div>
+      {{ end }}
+      <div class="proj-full-body">
+        <div class="proj-full-header">
+          <h3 class="proj-full-name">{{ .Title }}</h3>
+          <div class="proj-badges">
+            <span class="proj-lang-badge lang-{{ $langSlug }}">{{ .Params.language }}</span>
+            {{ if eq .Params.status "wip" }}<span class="proj-status-wip">WIP</span>{{ end }}
+            {{ if eq .Params.status "archived" }}<span class="proj-status-arc">ARCHIVED</span>{{ end }}
+          </div>
+        </div>
+        <p class="proj-full-desc">{{ .Params.description }}</p>
+        <div class="proj-full-tags">
+          {{ range first 3 .Params.tags }}
+          <span class="ptag">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+      <div class="proj-full-footer">
+        {{ with .Params.stars }}<span class="proj-stars">★ {{ . }}</span>{{ end }}
+        <span class="proj-gh-link">ver en GitHub →</span>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+
+</div>
+<script src="{{ "js/proyectos.js" | relURL }}"></script>
+{{ end }}

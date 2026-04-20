@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{ $langSlug := .Params.language | lower }}
+<div class="container">
+
+  <div class="proj-single-hero">
+    <a href="/proyectos/" class="back-link">← volver a proyectos</a>
+    <div class="proj-single-header">
+      <div>
+        <div class="blog-hero-label">// proyecto open source</div>
+        <h1 class="proj-single-title">{{ .Title }}</h1>
+        <p class="proj-single-desc">{{ .Params.description }}</p>
+        <div class="proj-single-meta">
+          <span class="proj-lang-badge lang-{{ $langSlug }}">{{ .Params.language }}</span>
+          {{ with .Params.stars }}<span class="proj-stars">★ {{ . }} estrellas</span>{{ end }}
+          {{ range .Params.tags }}<span class="ptag">{{ . }}</span>{{ end }}
+        </div>
+      </div>
+      <div class="proj-single-actions">
+        <a href="{{ .Params.github }}" target="_blank" rel="noopener" class="btn-hand btn-main">
+          ↗ ver en GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {{ with .Params.cover }}
+  <img src="{{ . }}" alt="{{ $.Title }}" class="post-cover">
+  {{ end }}
+
+  <div class="post-content proj-single-content">
+    {{ .Content }}
+  </div>
+
+</div>
+{{ end }}

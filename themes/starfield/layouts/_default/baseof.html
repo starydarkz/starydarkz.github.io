@@ -1,0 +1,14 @@
+{{ partial "head.html" . }}
+<body>
+  <div class="site-wrapper">
+    {{ partial "stars.html" . }}
+    {{ partial "navbar.html" . }}
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+  </div>
+  <script src="{{ "js/stars.js" | relURL }}"></script>
+  <script src="{{ "js/main.js" | relURL }}"></script>
+</body>
+</html>

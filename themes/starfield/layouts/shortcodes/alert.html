@@ -1,0 +1,13 @@
+{{ $type := .Get "type" | default "info" }}
+<div class="callout callout-{{ $type }}">
+  <div class="callout-icon">
+    {{ if eq $type "info" }}ℹ{{ end }}
+    {{ if eq $type "warning" }}⚠{{ end }}
+    {{ if eq $type "danger" }}☠{{ end }}
+    {{ if eq $type "tip" }}✦{{ end }}
+  </div>
+  <div class="callout-body">
+    {{ with .Get "title" }}<div class="callout-title">{{ . }}</div>{{ end }}
+    <div class="callout-text">{{ .Inner | markdownify }}</div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="{{ "/" | relURL }}" class="navbar-logo">
+      <span class="navbar-logo-dot"></span>
+      StaryDarkz
+    </a>
+    <ul class="navbar-nav">
+      {{ range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">
+          {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    {{ range .Site.Menus.main }}
+    <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </div>
+</nav>

@@ -1,0 +1,37 @@
+{{ $cat := index .Params.categories 0 | default "Web" }}
+{{ $catSlug := $cat | lower | replaceRE " " "" }}
+<a href="{{ .RelPermalink }}" class="post-card">
+  <div class="post-card-img post-img-{{ $catSlug }}">
+    {{ with .Params.cover }}
+      <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+    {{ else }}
+      <span class="post-card-emoji">
+        {{ if eq $cat "Web" }}🔐
+        {{ else if eq $cat "Malware" }}🛡️
+        {{ else if eq $cat "Red Team" }}🎯
+        {{ else if eq $cat "CTF" }}🏆
+        {{ else if eq $cat "Crypto" }}🔓
+        {{ else if eq $cat "Network" }}🌐
+        {{ else }}✦{{ end }}
+      </span>
+    {{ end }}
+    <div class="post-card-img-overlay"></div>
+    <span class="post-card-tag tag-{{ $catSlug }}">{{ $cat }}</span>
+  </div>
+  <div class="post-card-body">
+    <div class="post-card-date">{{ .Date.Format "2006-01-02" }}</div>
+    <h3 class="post-card-title">{{ .Title }}</h3>
+    <p class="post-card-desc">{{ .Params.description }}</p>
+  </div>
+  <div class="post-card-footer">
+    <div class="post-card-meta">
+      <span class="post-card-readtime">{{ .Params.readtime }} min</span>
+      <div class="post-card-tags">
+        {{ range first 2 .Params.tags }}
+        <span class="ptag">{{ . }}</span>
+        {{ end }}
+      </div>
+    </div>
+    <span class="post-arrow">→</span>
+  </div>
+</a>

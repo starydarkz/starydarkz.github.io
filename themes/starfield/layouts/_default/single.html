@@ -1,0 +1,47 @@
+{{ define "main" }}
+{{ $cat := index .Params.categories 0 | default "Web" }}
+{{ $catSlug := $cat | lower | replaceRE " " "" }}
+<div class="container">
+
+  <article class="single-post">
+    <div class="post-hero">
+      <div class="post-hero-tags">
+        <span class="post-card-tag tag-{{ $catSlug }}">{{ $cat }}</span>
+        {{ range .Params.tags }}
+        <span class="ptag">{{ . }}</span>
+        {{ end }}
+      </div>
+      <h1 class="post-hero-title">{{ .Title }}</h1>
+      <div class="post-hero-meta">
+        <span>📅 {{ .Date.Format "2 January 2006" }}</span>
+        <span>⏱ {{ .Params.readtime }} min de lectura</span>
+        <span>✍ {{ .Site.Params.author }}</span>
+      </div>
+    </div>
+
+    {{ with .Params.cover }}
+    <img src="{{ . }}" alt="{{ $.Title }}" class="post-cover">
+    {{ end }}
+
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+
+    <div class="post-footer-nav">
+      {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}" class="post-nav-btn post-nav-prev">
+        <span class="post-nav-label">← anterior</span>
+        <span class="post-nav-title">{{ .Title }}</span>
+      </a>
+      {{ end }}
+      {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}" class="post-nav-btn post-nav-next">
+        <span class="post-nav-label">siguiente →</span>
+        <span class="post-nav-title">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </article>
+
+</div>
+{{ end }}
