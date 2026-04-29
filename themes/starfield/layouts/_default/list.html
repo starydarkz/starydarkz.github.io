@@ -69,24 +69,7 @@
   </div>
 
   <!-- Embed posts data for search -->
-  <script>
-    window.POSTS_DATA = [
-      {{ range (where .Site.RegularPages "Type" "posts") }}
-      {
-        title: {{ .Title | jsonify }},
-        desc: {{ .Params.description | default "" | jsonify }},
-        url: {{ .RelPermalink | jsonify }},
-        cat: {{ index .Params.categories 0 | default "Web" | lower | replaceRE " " "" | jsonify }},
-        catLabel: {{ index .Params.categories 0 | default "Web" | jsonify }},
-        tags: {{ .Params.tags | jsonify }},
-        date: {{ .Date.Format "2006-01-02" | jsonify }},
-        readtime: {{ .Params.readtime | default "5" | jsonify }},
-        cover: {{ .Params.cover | default "" | jsonify }},
-        featured: {{ .Params.featured | default false | jsonify }}
-      },
-      {{ end }}
-    ];
-  </script>
+
 
   {{ template "_internal/pagination.html" . }}
 
