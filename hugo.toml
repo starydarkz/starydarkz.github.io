@@ -1,18 +1,16 @@
 baseURL = "https://starydarkz.github.io/"
 languageCode = "es-419"
-title = "StaryDarkz"
+title = "El blog de Stary"
 theme = "starfield"
 paginate = 9
 enableRobotsTXT = true
 enableEmoji = true
 
 [params]
-  author   = "StaryDarkz"
-  description = "Investigador de ciberseguridad. Exploits, herramientas propias y conocimiento sin filtros."
-  tagline  = "ciberespacio"
+  author   = "El blog de Stary"
+  description = "Threat Detection/Hunting, Cyber Threat Intellence, Automatizacion y otras curiosidades"
   avatar   = "/images/avatar.jpg"
-  role     = "Penetration Tester · Malware Analyst · Tool Developer"
-  bio      = "Threat Detection/Hunting, Cyber Threat Intellence, Automatizacion y otras curiosidades"
+  bio      = "Threat Detection/Hunting, Cyber Threat Intellence, Automatizacion y otsssras curiosidades..."
   linkedin = "https://www.linkedin.com/in/enddyfigueroa/"
   telegram = "https://t.me/StaryDarkz"
   github   = "https://github.com/StaryDarkz"
