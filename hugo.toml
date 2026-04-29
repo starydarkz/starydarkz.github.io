@@ -9,11 +9,10 @@ enableEmoji = true
 [params]
   author   = "StaryDarkz"
   description = "Investigador de ciberseguridad. Exploits, herramientas propias y conocimiento sin filtros."
-  tagline  = "Explorando el universo digital"
+  tagline  = "ciberespacio"
   avatar   = "/images/avatar.jpg"
   role     = "Penetration Tester · Malware Analyst · Tool Developer"
-  bio      = "Investigador de ciberseguridad con foco en offensive security, análisis de malware y desarrollo de herramientas propias. Me apasiona entender cómo funcionan los sistemas para encontrar sus puntos débiles. Comparto lo que aprendo — sin filtros."
-  status   = "disponible"
+  bio      = "Threat Detection/Hunting, Cyber Threat Intellence, Automatizacion y otras curiosidades"
   linkedin = "https://www.linkedin.com/in/enddyfigueroa/"
   telegram = "https://t.me/StaryDarkz"
   github   = "https://github.com/StaryDarkz"
