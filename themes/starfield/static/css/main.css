@@ -476,3 +476,79 @@ main { flex: 1; }
   .about-stats-col { flex-direction: row; flex-wrap: wrap; justify-content: center; }
   .about-cta      { margin-left: 0; }
 }
+/* Platform link cards */
+.plat-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 48px;
+}
+
+.plat-link-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border-radius: var(--r-lg);
+    padding: 20px 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, border-color 0.2s;
+    border: 1px solid var(--border-card);
+}
+
+    .plat-link-card:hover {
+        transform: translateY(-3px);
+    }
+
+.thm-link:hover {
+    border-color: rgba(196,30,58,0.35);
+}
+
+.ld-link:hover {
+    border-color: rgba(59,130,246,0.35);
+}
+
+.plat-link-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.plat-link-name {
+    font-family: var(--font-sign);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.plat-link-user {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--texts);
+}
+
+.plat-link-arrow {
+    margin-left: auto;
+    font-size: 20px;
+    color: var(--mint);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.plat-link-card:hover .plat-link-arrow {
+    opacity: 1;
+}
+
+/* Extra social chips */
+.chip-thm {
+    background: rgba(196,30,58,0.08);
+    color: #ff4466;
+    border: 1px solid rgba(196,30,58,0.2);
+}
+
+.chip-ld {
+    background: rgba(59,130,246,0.08);
+    color: #60a5fa;
+    border: 1px solid rgba(59,130,246,0.18);
+}

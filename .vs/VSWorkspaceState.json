@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\themes"
+    "\\themes",
+    "\\themes\\starfield",
+    "\\themes\\starfield\\layouts"
   ],
-  "SelectedNode": "\\themes",
   "PreviewInSolutionExplorer": false
 }

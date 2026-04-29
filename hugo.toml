@@ -7,28 +7,18 @@ enableRobotsTXT = true
 enableEmoji = true
 
 [params]
-  author        = "StaryDarkz"
-  description   = "Investigador de ciberseguridad. Exploits, herramientas propias y conocimiento sin filtros."
-  tagline       = "Explorando el universo digital"
-  avatar        = "/images/avatar.jpg"
-  role          = "Penetration Tester · Malware Analyst · Tool Developer"
-  bio           = "Investigador de ciberseguridad con foco en offensive security, análisis de malware y desarrollo de herramientas propias. Me apasiona entender cómo funcionan los sistemas para encontrar sus puntos débiles. Comparto lo que aprendo — sin filtros."
-  status        = "disponible"
-  linkedin      = "https://linkedin.com/in/tu-usuario"
-  telegram      = "https://t.me/tu-usuario"
-  github        = "https://github.com/StarydDarkz"
-  htb_user      = "StaryDarkz"
-  htb_rank      = "Pro Hacker"
-  htb_machines  = "47"
-  htb_global    = "top 8%"
-  thm_user      = "StaryDarkz"
-  thm_rank      = "Top 5%"
-  thm_rooms     = "138"
-  thm_points    = "52k"
-  ld_user       = "StaryDarkz"
-  ld_rank       = "Analyst"
-  ld_alerts     = "34"
-  ld_global     = "top 15%"
+  author   = "StaryDarkz"
+  description = "Investigador de ciberseguridad. Exploits, herramientas propias y conocimiento sin filtros."
+  tagline  = "Explorando el universo digital"
+  avatar   = "/images/avatar.jpg"
+  role     = "Penetration Tester · Malware Analyst · Tool Developer"
+  bio      = "Investigador de ciberseguridad con foco en offensive security, análisis de malware y desarrollo de herramientas propias. Me apasiona entender cómo funcionan los sistemas para encontrar sus puntos débiles. Comparto lo que aprendo — sin filtros."
+  status   = "disponible"
+  linkedin = "https://www.linkedin.com/in/enddyfigueroa/"
+  telegram = "https://t.me/StaryDarkz"
+  github   = "https://github.com/StaryDarkz"
+  thm_url  = "https://tryhackme.com/p/StaryDarkz"
+  ld_url   = "https://app.letsdefend.io/user/profile/StaryDarkz"
 
 [menu]
   [[menu.main]]
@@ -54,10 +44,10 @@ enableEmoji = true
 
 [markup]
   [markup.highlight]
-    style               = "monokai"
-    lineNos             = true
-    lineNumbersInTable  = false
-    tabWidth            = 2
+    style              = "monokai"
+    lineNos            = true
+    lineNumbersInTable = false
+    tabWidth           = 2
   [markup.goldmark.renderer]
     unsafe = true
 

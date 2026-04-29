@@ -6,11 +6,7 @@
   <div class="profile-hero">
     <div class="profile-top">
       <div class="avatar-col">
-        {{ if fileExists "static/images/avatar.jpg" }}
-        <img src="/images/avatar.jpg" alt="{{ $p.author }}" class="about-avatar">
-        {{ else }}
         <div class="about-avatar-placeholder">🌌</div>
-        {{ end }}
         <div class="avatar-status">
           <span class="status-dot"></span>{{ $p.status | default "disponible" }}
         </div>
@@ -42,81 +38,41 @@
     <path d="M0,15 C60,5 120,25 180,15 C240,5 300,25 360,15 C420,5 480,25 540,15 C600,5 660,25 720,15 C780,5 840,25 900,15" fill="none" stroke="#4DFFC4" stroke-width="1.5" stroke-linecap="round"/>
   </svg>
 
-  <!-- PLATFORMS -->
-  <div class="section-label"><span class="star-bullet">◈</span>plataformas</div>
-  <div class="platforms-grid">
-    <div class="platform-card htb-card">
-      <div class="plat-header">
-        <div class="plat-name">HackTheBox</div>
-        <div class="plat-badge htb-badge">{{ $p.htb_rank | upper }}</div>
-      </div>
-      <div class="plat-stats">
-        <div class="plat-stat"><div class="plat-stat-val">{{ $p.htb_machines }}</div><div class="plat-stat-lbl">máquinas</div></div>
-        <div class="plat-stat"><div class="plat-stat-val">{{ $p.htb_global }}</div><div class="plat-stat-lbl">global</div></div>
-      </div>
-      <div class="rank-bar-wrap">
-        <div class="rank-label"><span>rango</span><span class="htb-text">Pro → Elite</span></div>
-        <div class="rank-track"><div class="rank-fill htb-fill"></div></div>
-      </div>
-      <div class="plat-user">usuario: <span>{{ $p.htb_user }}</span></div>
-    </div>
-
-    <div class="platform-card thm-card">
-      <div class="plat-header">
-        <div class="plat-name">TryHackMe</div>
-        <div class="plat-badge thm-badge">{{ $p.thm_rank | upper }}</div>
-      </div>
-      <div class="plat-stats">
-        <div class="plat-stat"><div class="plat-stat-val">{{ $p.thm_rooms }}</div><div class="plat-stat-lbl">salas</div></div>
-        <div class="plat-stat"><div class="plat-stat-val">{{ $p.thm_points }}</div><div class="plat-stat-lbl">puntos</div></div>
-      </div>
-      <div class="rank-bar-wrap">
-        <div class="rank-label"><span>experiencia</span><span class="thm-text">{{ $p.thm_points }} pts</span></div>
-        <div class="rank-track"><div class="rank-fill thm-fill"></div></div>
-      </div>
-      <div class="plat-user">usuario: <span>{{ $p.thm_user }}</span></div>
-    </div>
-
-    <div class="platform-card ld-card">
-      <div class="plat-header">
-        <div class="plat-name">LetsDefend</div>
-        <div class="plat-badge ld-badge">{{ $p.ld_rank | upper }}</div>
-      </div>
-      <div class="plat-stats">
-        <div class="plat-stat"><div class="plat-stat-val">{{ $p.ld_alerts }}</div><div class="plat-stat-lbl">alertas</div></div>
-        <div class="plat-stat"><div class="plat-stat-val">{{ $p.ld_global }}</div><div class="plat-stat-lbl">global</div></div>
-      </div>
-      <div class="rank-bar-wrap">
-        <div class="rank-label"><span>nivel</span><span class="ld-text">Analyst → Sr.</span></div>
-        <div class="rank-track"><div class="rank-fill ld-fill"></div></div>
-      </div>
-      <div class="plat-user">usuario: <span>{{ $p.ld_user }}</span></div>
-    </div>
-  </div>
-
-  <svg class="wavy-div wavy-div--dashed" viewBox="0 0 900 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,15 C80,25 160,5 240,15 C320,25 400,5 480,15 C560,25 640,5 720,15 C800,25 860,5 900,15" fill="none" stroke="#4DFFC4" stroke-width="1" stroke-linecap="round" stroke-dasharray="4 6"/>
-  </svg>
-
-  <!-- CERTIFICATIONS — en curso primero -->
+  <!-- CERTIFICACIONES — en curso primero -->
   <div class="section-label"><span class="star-bullet">★</span>certificaciones</div>
   <div class="certs-grid">
     <div class="cert-card cert-progress-card">
       <div class="in-progress-glow"></div>
       <div class="cert-icon cert-icon-progress">📚</div>
-      <div><div class="cert-name">OSWE</div><div class="cert-issuer">Offensive Security</div><span class="cert-chip chip-progress">EN CURSO</span></div>
+      <div>
+        <div class="cert-name">OSWE</div>
+        <div class="cert-issuer">Offensive Security</div>
+        <span class="cert-chip chip-progress">EN CURSO</span>
+      </div>
     </div>
     <div class="cert-card">
       <div class="cert-icon cert-icon-active">🏆</div>
-      <div><div class="cert-name">OSCP</div><div class="cert-issuer">Offensive Security</div><span class="cert-chip chip-active">ACTIVA</span></div>
+      <div>
+        <div class="cert-name">OSCP</div>
+        <div class="cert-issuer">Offensive Security</div>
+        <span class="cert-chip chip-active">ACTIVA</span>
+      </div>
     </div>
     <div class="cert-card">
       <div class="cert-icon cert-icon-active">🛡️</div>
-      <div><div class="cert-name">CEH</div><div class="cert-issuer">EC-Council</div><span class="cert-chip chip-active">ACTIVA</span></div>
+      <div>
+        <div class="cert-name">CEH</div>
+        <div class="cert-issuer">EC-Council</div>
+        <span class="cert-chip chip-active">ACTIVA</span>
+      </div>
     </div>
     <div class="cert-card">
       <div class="cert-icon cert-icon-active">⚡</div>
-      <div><div class="cert-name">eJPT</div><div class="cert-issuer">eLearnSecurity</div><span class="cert-chip chip-active">ACTIVA</span></div>
+      <div>
+        <div class="cert-name">eJPT</div>
+        <div class="cert-issuer">eLearnSecurity</div>
+        <span class="cert-chip chip-active">ACTIVA</span>
+      </div>
     </div>
   </div>
 
@@ -124,40 +80,69 @@
     <path d="M0,15 C60,5 120,25 180,15 C240,5 300,25 360,15 C420,5 480,25 540,15 C600,5 660,25 720,15 C780,5 840,25 900,15" fill="none" stroke="#4DFFC4" stroke-width="1.5" stroke-linecap="round"/>
   </svg>
 
-  <!-- SKILLS AS BADGES -->
+  <!-- HABILIDADES -->
   <div class="section-label"><span class="star-bullet">✦</span>habilidades</div>
   <div class="skills-section">
     <div class="skill-group-wrap">
-      <div class="skill-group-head"><span>💻</span><span class="skill-group-title">Lenguajes</span><div class="skill-group-line"></div></div>
+      <div class="skill-group-head">
+        <span>💻</span>
+        <span class="skill-group-title">Lenguajes</span>
+        <div class="skill-group-line"></div>
+      </div>
       <div class="badges-wrap">
-        <span class="badge badge-lang">Python</span><span class="badge badge-lang">Bash</span>
-        <span class="badge badge-lang">Go</span><span class="badge badge-lang">C</span>
-        <span class="badge badge-lang">C++</span><span class="badge badge-lang">PowerShell</span>
-        <span class="badge badge-lang">JavaScript</span><span class="badge badge-lang">Rust</span>
+        <span class="badge badge-lang">Python</span>
+        <span class="badge badge-lang">Bash</span>
+        <span class="badge badge-lang">Go</span>
+        <span class="badge badge-lang">C</span>
+        <span class="badge badge-lang">C++</span>
+        <span class="badge badge-lang">PowerShell</span>
+        <span class="badge badge-lang">JavaScript</span>
+        <span class="badge badge-lang">Rust</span>
         <span class="badge badge-lang">SQL</span>
       </div>
     </div>
     <div class="skill-group-wrap">
-      <div class="skill-group-head"><span>🛠</span><span class="skill-group-title">Herramientas & Tecnologías</span><div class="skill-group-line"></div></div>
+      <div class="skill-group-head">
+        <span>🛠</span>
+        <span class="skill-group-title">Herramientas & Tecnologías</span>
+        <div class="skill-group-line"></div>
+      </div>
       <div class="badges-wrap">
-        <span class="badge badge-tech">Burp Suite</span><span class="badge badge-tech">Metasploit</span>
-        <span class="badge badge-tech">Nmap</span><span class="badge badge-tech">Wireshark</span>
-        <span class="badge badge-tech">Volatility</span><span class="badge badge-tech">Ghidra</span>
-        <span class="badge badge-tech">IDA Pro</span><span class="badge badge-tech">Impacket</span>
-        <span class="badge badge-tech">Hashcat</span><span class="badge badge-tech">BloodHound</span>
-        <span class="badge badge-tech">ffuf</span><span class="badge badge-tech">sqlmap</span>
-        <span class="badge badge-tech">Docker</span><span class="badge badge-tech">Git</span>
+        <span class="badge badge-tech">Burp Suite</span>
+        <span class="badge badge-tech">Metasploit</span>
+        <span class="badge badge-tech">Nmap</span>
+        <span class="badge badge-tech">Wireshark</span>
+        <span class="badge badge-tech">Volatility</span>
+        <span class="badge badge-tech">Ghidra</span>
+        <span class="badge badge-tech">IDA Pro</span>
+        <span class="badge badge-tech">Impacket</span>
+        <span class="badge badge-tech">Hashcat</span>
+        <span class="badge badge-tech">BloodHound</span>
+        <span class="badge badge-tech">ffuf</span>
+        <span class="badge badge-tech">sqlmap</span>
+        <span class="badge badge-tech">Docker</span>
+        <span class="badge badge-tech">Git</span>
       </div>
     </div>
     <div class="skill-group-wrap">
-      <div class="skill-group-head"><span>🧠</span><span class="skill-group-title">Conocimientos</span><div class="skill-group-line"></div></div>
+      <div class="skill-group-head">
+        <span>🧠</span>
+        <span class="skill-group-title">Conocimientos</span>
+        <div class="skill-group-line"></div>
+      </div>
       <div class="badges-wrap">
-        <span class="badge badge-know">Web App Hacking</span><span class="badge badge-know">Active Directory</span>
-        <span class="badge badge-know">Malware Analysis</span><span class="badge badge-know">Reverse Engineering</span>
-        <span class="badge badge-know">Red Team Ops</span><span class="badge badge-know">OSINT</span>
-        <span class="badge badge-know">Threat Hunting</span><span class="badge badge-know">Privilege Escalation</span>
-        <span class="badge badge-know">Network Forensics</span><span class="badge badge-know">CTF</span>
-        <span class="badge badge-know">SOC / Blue Team</span><span class="badge badge-know">Social Engineering</span>
+        <span class="badge badge-know">Web App Hacking</span>
+        <span class="badge badge-know">Active Directory</span>
+        <span class="badge badge-know">Malware Analysis</span>
+        <span class="badge badge-know">Reverse Engineering</span>
+        <span class="badge badge-know">Red Team Ops</span>
+        <span class="badge badge-know">OSINT</span>
+        <span class="badge badge-know">Threat Hunting</span>
+        <span class="badge badge-know">Privilege Escalation</span>
+        <span class="badge badge-know">Network Forensics</span>
+        <span class="badge badge-know">CTF</span>
+        <span class="badge badge-know">SOC / Blue Team</span>
+        <span class="badge badge-know">Social Engineering</span>
       </div>
     </div>
   </div>
@@ -166,7 +151,7 @@
     <path d="M0,15 C80,25 160,5 240,15 C320,25 400,5 480,15 C560,25 640,5 720,15 C800,25 860,5 900,15" fill="none" stroke="#4DFFC4" stroke-width="1" stroke-linecap="round" stroke-dasharray="4 6"/>
   </svg>
 
-  <!-- TIMELINE -->
+  <!-- TRAYECTORIA -->
   <div class="section-label"><span class="star-bullet">◇</span>trayectoria</div>
   <div class="timeline">
     <div class="tl-item">
