@@ -1,30 +1,22 @@
 ---
 title: "FortiSIEM CMDB Validator"
-date: 2024-10-01
+date: 2026-05-03
 draft: false
-description: "FortiSIEM CMDB Validator utiliza la API de FortiSIEM para extraer y analizar informacion sobre los equipos integrados en la CMDB del FortiSIEM para exportar el resultado en CSV.
+description: "FortiSIEM CMDB Validator utiliza la API de FortiSIEM para extraer y analizar informacion sobre los equipos integrados en la CMDB del FortiSIEM para realizar un analisis de integracioens y exportarlo en un reporte excel.
 "
 github: "https://github.com/starydarkz/Fortisiem_CMDB_Validator"
 language: "Python"
 status: "active"
-tags: ["fortisiem", "python", "automation"]
-cover: "https://github.com/starydarkz/fortisiem_cmdb_validator/raw/main/portada.png"
+tags: ["fortisiem", "fortisiem-api", "python", "automation"]
 ---
 
 ## ¿Qué hace?
 
-FortiSIEM CMDB Validator utiliza la API de FortiSIEM para extraer y analizar informacion sobre los equipos integrados en la CMDB del FortiSIEM para exportar el resultado en CSV.
+FortiSIEM CMDB Validator utiliza la API de FortiSIEM para extraer y analizar informacion sobre los equipos integrados en la CMDB del FortiSIEM para exportar analisis de las integraciones en un reporte de excel.
 
-## Instalación
-
-```bash
-git clone https://github.com/starydarkz/fortisiem_cmdb_validator.git
-cd fortisiem_cmdb_validator
-pip3 install -r requeriments.txt
-```
-
-## Funciones de la herramienta:
-- Extraer equipos de la CMDB de FortiSIEM a partir de un listado.
-- Extraer equipos que no envian eventos por un tiempo determinado en la CMDB.
+## Caracteristicas:
+- Metricas de cobertura de equipos que envian Logs al SIEM.
+- Analisis de equipos que envian y no envian eventos.
+- Analisis de metodos de integracion y tipos de auditorias.
+- Extraer equipos que no envian eventos por un tiempo determinado por el usuario.
 - Extraer todos los equipos de la CMDB de FortiSIEM y mostrar si han enviado eventos o no en un rango de tiempo.
-
