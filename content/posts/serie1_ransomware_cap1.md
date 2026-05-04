@@ -3,10 +3,10 @@ title: "Capitulo 1"
 date: 2026-05-04
 draft: true
 description: "Prueba de primer post"
-cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/250px-Black_colour.jpg?utm_source=es.wikiquote.org&utm_campaign=parser&utm_content=thumbnail"
-categories: ["Malware"]
-tags: ["fisrt"]
-readtime: "1"
+cover: "https://github.com/starydarkz/starydarkz.github.io/blob/dd91021269100206d5a4d98dbe72cd29a022f4ae/images/portada_cap1_serieransomware.png?raw=true"
+categories: ["Serie:RansomwareXZ"]
+tags: ["RansomwareXZ", "Investigaciones"]
+readtime: "3"
 featured: false
 ---
 
