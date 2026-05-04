@@ -1,6 +1,6 @@
 ---
 title: "Capitulo 1"
-date: 2024-04-29
+date: 2026-05-04
 draft: true
 description: "Prueba de primer post"
 cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/250px-Black_colour.jpg?utm_source=es.wikiquote.org&utm_campaign=parser&utm_content=thumbnail"
@@ -9,9 +9,6 @@ tags: ["fisrt"]
 readtime: "1"
 featured: false
 ---
-
-## Hello World
-
 
 Antes de empezar a analizar como funcionan los ransomware, su historia y demas objetivos dentro de esta investigacion, tenemos que definir que es un ransomware y cuales tipos de ransomware existen, esto nos podra ayudar a tener una idea mas clara de lo que realmente son y como funcionan.
 
