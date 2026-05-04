@@ -1,11 +1,11 @@
 ---
-title: "Capitulo 1"
+title: "Serie Ransomware Deep Dive: Capitulo 1"
 date: 2026-05-04
 draft: true
-description: "Prueba de primer post"
-cover: "https://github.com/starydarkz/starydarkz.github.io/blob/dd91021269100206d5a4d98dbe72cd29a022f4ae/images/portada_cap1_serieransomware.png?raw=true"
-categories: ["Serie:RansomwareXZ"]
-tags: ["RansomwareXZ", "Investigaciones"]
+description: "Fundamentos de que es el Ransomware"
+cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap1_serieransomware.png?raw=true"
+categories: ["Serie de Investigacion"]
+tags: ["Serie:Ransomware Deep Dive"]
 readtime: "3"
 featured: false
 ---
