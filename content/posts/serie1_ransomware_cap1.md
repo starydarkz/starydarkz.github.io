@@ -53,4 +53,4 @@ Durante esta serie nos estaremos enfocando en los ransomware de tipo de cifrado 
 
 La mayoria de amenazas de este tipo siguen un proceso de 3 pasos:
 
-![ProcesoRansomware](images/procesoransom001.png)
+![ProcesoRansomware](https://github.com/starydarkz/starydarkz.github.io/blob/main/images/procesoransom001.png?raw=true)
