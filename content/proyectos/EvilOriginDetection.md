@@ -20,3 +20,7 @@ De esta forma nacio Evil Origin Detection, la idea es realizar todo este analisi
 
 La realidad es que existen plataformas similares que conectan otras herramientas de inteligencia de amenazas e intentan reunir la mayor cantidad de informacion posible, sin embargo la mayoria son de Pago, no estan tan enfocadas en la correlacion de informacion o carecen de funciones interesantes. Este proyecto no necesariamente sea lo mas original que exista, pero con pasion, actualizaciones constantes y apoyo de la comunidad podemos crear una buena plataforma de inteligencia.
 
+Este proecto es opensource y se encuentra alojkado en github en el enlace de arriba "Ver Github", adicional actualmente este proyecto esta hosteado aqui para pruebas:
+
+https://evilorigindetection.onrender.com/
+
