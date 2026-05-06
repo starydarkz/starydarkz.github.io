@@ -2,8 +2,8 @@
 title: "FortiSIEM CMDB Validator"
 date: 2026-05-03
 draft: false
-description: "FortiSIEM CMDB Validator utiliza la API de FortiSIEM para extraer y analizar informacion sobre los equipos integrados en la CMDB del FortiSIEM para realizar un analisis de integracioens y exportarlo en un reporte excel.
-"
+description: "FortiSIEM CMDB Validator utiliza la API de FortiSIEM para extraer y analizar informacion sobre los equipos integrados en la CMDB del FortiSIEM para realizar un analisis de integracioens y exportarlo en un reporte excel."
+cover: "https://raw.githubusercontent.com/starydarkz/Fortisiem_CMDB_Validator/refs/heads/main/Example/2.png"
 github: "https://github.com/starydarkz/Fortisiem_CMDB_Validator"
 language: "Python"
 status: "active"
