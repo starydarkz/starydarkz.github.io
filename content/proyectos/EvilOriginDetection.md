@@ -1,0 +1,21 @@
+---
+title: "Evil Origin Detection"
+date: 2026-05-06
+draft: false
+description: "Evil Origin Detection is an open-source threat intelligence correlation platform. Paste an IP, domain, hash, URL or email — EOD queries multiple intelligence sources in parallel, extracts related indicators, computes a risk score, and presents everything in a single analysis view with a correlation graph, activity timeline, and geolocation map."
+github: "https://github.com/starydarkz/EvilOriginDetection"
+language: "Python"
+status: "active"
+tags: ["cti", "osint","automation"]
+---
+
+# Evil Origin Detection
+
+Cuando era analista T1 en un SOC MSSP, tenia que revisar muchas alertas al dia en donde tenia que validar que estos indicadores no sean de compromiso (IOC), para eso usaba herramientas como Virustotal, AbuseipDB, entre otras herramientas de inteligencia, sin embargo para cada indicador tenia que abrir muchas herramientas y seguir un proceso para determinar si realmente son maliciosas o no.
+
+Aun asi a veces tenia que ir mas alla de lo que estas plataforams te decian, podria interesarme hacer OSINT para saber de que trata realmente ese indicador y porque esta interactuando en la infraestructura, usaba dorks de google, tecnicas de dns pasivo, ver el contenido de esa URL para ver relamente de que trata, revisar puertosr abiertos, indagar mas en el proveedor de esa IP o incluso geolocalizar dicho indicador.
+
+De esta forma nacio Evil Origin Detection, la idea es realizar todo este analisis, conectar todas esas plataformas de inteligencia y poder correlacionar esa informacion para identiricar patrones y posible actividad maliciosa, poder ver la actividad que ha tenido en internet!.
+
+La realidad es que existen plataformas similares que conectan otras herramientas de inteligencia de amenazas e intentan reunir la mayor cantidad de informacion posible, sin embargo la mayoria son de Pago, no estan tan enfocadas en la correlacion de informacion o carecen de funciones interesantes. Este proyecto no necesariamente sea lo mas original que exista, pero con pasion, actualizaciones constantes y apoyo de la comunidad podemos crear una buena plataforma de inteligencia.
+
