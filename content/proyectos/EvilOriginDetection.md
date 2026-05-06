@@ -12,9 +12,9 @@ tags: ["cti", "osint","automation"]
 
 # Evil Origin Detection
 
-Cuando era analista T1 en un SOC MSSP, tenia que revisar muchas alertas al dia en donde tenia que validar que estos indicadores no sean de compromiso (IOC), para eso usaba herramientas como Virustotal, AbuseipDB, entre otras herramientas de inteligencia, sin embargo para cada indicador tenia que abrir muchas herramientas y seguir un proceso para determinar si realmente son maliciosas o no.
+Cuando era analista en un SOC, tenia que revisar muchas alertas al dia en donde tenia que validar que estos indicadores no sean de compromiso (IOC), para eso usaba herramientas como Virustotal, AbuseipDB, entre otras herramientas de inteligencia, sin embargo para cada indicador tenia que abrir muchas herramientas y seguir un proceso para determinar si realmente son maliciosas o no.
 
-Aun asi a veces tenia que ir mas alla de lo que estas plataforams te decian, podria interesarme hacer OSINT para saber de que trata realmente ese indicador y porque esta interactuando en la infraestructura, usaba dorks de google, tecnicas de dns pasivo, ver el contenido de esa URL para ver relamente de que trata, revisar puertosr abiertos, indagar mas en el proveedor de esa IP o incluso geolocalizar dicho indicador.
+Aun asi a veces tenia que ir mas alla de lo que estas plataformas me aportaban, como hacer OSINT para saber sobre el origen de ese indicador y porque esta interactuando en la infraestructura, usaba dorks de google, tecnicas de dns pasivo, ver el contenido de esa URL para ver relamente de que trata, revisar puertos abiertos, indagar mas en el proveedor de esa IP o incluso geolocalizar dicho indicador.
 
 De esta forma nacio Evil Origin Detection, la idea es realizar todo este analisis, conectar todas esas plataformas de inteligencia y poder correlacionar esa informacion para identiricar patrones y posible actividad maliciosa, poder ver la actividad que ha tenido en internet!.
 
