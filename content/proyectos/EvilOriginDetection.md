@@ -3,6 +3,7 @@ title: "Evil Origin Detection"
 date: 2026-05-06
 draft: false
 description: "Evil Origin Detection is an open-source threat intelligence correlation platform. Paste an IP, domain, hash, URL or email — EOD queries multiple intelligence sources in parallel, extracts related indicators, computes a risk score, and presents everything in a single analysis view with a correlation graph, activity timeline, and geolocation map."
+cover: "https://github.com/starydarkz/EvilOriginDetection/blob/main/tool.png?raw=true"
 github: "https://github.com/starydarkz/EvilOriginDetection"
 language: "Python"
 status: "active"
