@@ -3,7 +3,7 @@ title: "Serie Ransomware Deep Dive: Capitulo 2"
 date: 2026-05-07
 draft: true
 description: "La evolucion del ransomware, el genesis"
-cover: "   "
+cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap2_serieransomware.png?raw=true"
 categories: ["Serie de Investigacion"]
 tags: ["Serie:Ransomware Deep Dive"]
 readtime: "3"
