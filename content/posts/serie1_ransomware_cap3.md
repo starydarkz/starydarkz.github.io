@@ -1,12 +1,12 @@
 ---
 title: "Serie Ransomware Deep Dive: Capitulo 3"
 date: 2026-05-08
-draft: true
+draft: false
 description: "La evolucion del ransomware, generaciones"
-cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap2_serieransomware.png?raw=true"
+cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap3_serieransomware.png?raw=true"
 categories: ["Serie de Investigacion"]
 tags: ["Serie:Ransomware Deep Dive"]
-readtime: "3"
+readtime: "5"
 featured: false
 ---
 
@@ -46,9 +46,8 @@ Mas recientemente, aparece la "doble extorcion":
 
 Esto hace que incluso con backups, la víctima siga bajo presión.
 
-Actualmente el ransomware es mas dirigido (ataques a medida), mas silencioso (pueden durar semanas o meses dentro de la red) y mas profecional (soporte tecnico, paneles, afiliados y mucho tiempo libre).
+Actualmente el ransomware es mas dirigido (ataques a medida), mas silencioso (pueden durar semanas o meses dentro de la red) y mas profecional (soporte tecnico, paneles, afiliados y mucho tiempo libre). Las tendencias apuntan a:
 
-Las tendencias apuntan a:
 - Uso de ingeligencia artificial para automatizar ataques
 - Ciberterrorismo mediante ataques a infraestructuras criticas (energia, salud...)
 - Mayor combinación con robo de identidad y espionaje
