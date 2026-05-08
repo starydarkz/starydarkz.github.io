@@ -24,11 +24,11 @@ Era diciembre del 1989, cuando Eddy Willems esperaba encontrar investigaciones m
 
 Pocos días después de insertar el disco, el ordenador de Willems se bloqueó y apareció un mensaje exigiéndole que enviara 189 dólares en un sobre a un apartado de correos en Panamá.
 
-El malware no se mostraba de manera inmediata, sino que se activaba **después de que el ordenador donde se habían introducido se encendiera 90 veces**. Al iniciarlo en la vez número 91 es cuando la amenaza daba la cara. Eso podía ser unos tres meses después de acudir al congreso. Entonces ocultaba directorios y cifraba los nombres de todos los archivos en la unidad C.
+El malware no se mostraba de manera inmediata, sino que se activaba **después de que el ordenador donde se habían introducido se encendiera 90 veces**. Al iniciarlo en la vez número 91 es cuando la amenaza daba la cara. Eso podía ser unos tres meses después de acudir al congreso. Entonces ocultaba directorios y cifraba los nombres de todos los archivos en la unidad C:, pero no el contenido de los archivos como tal.
 
 Para evitar este desaguisado había que pasar por caja, según indicaba un mensaje que aparecía en la pantalla reclamando el pago.
 
-![Nota de Rescate del Ransomware AIDS](https://cdn.prod.website-files.com/5efc3ccdb72aaa7480ec8179/5f0baca71ed37ff8881374e3_image-5.png)
+![Nota de Rescate del Ransomware AIDS](https://www.knowbe4.com/hs-fs/hubfs/AIDS-Trojan.jpg?width=780&height=488&name=AIDS-Trojan.jpg)
 
 > “No pagué el rescate ni perdí ningún dato porque descubrí cómo solucionar el problema”, declaró a CNN Business.
 > 
