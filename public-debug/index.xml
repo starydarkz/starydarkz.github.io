@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>0xdarkz</title>
+    <link>https://0xdarkz.com/</link>
+    <description>Recent content on 0xdarkz</description>
+    <generator>Hugo</generator>
+    <language>es-419</language>
+    <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://0xdarkz.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serie Ransomware Deep Dive: Capitulo 3</title>
+      <link>https://0xdarkz.com/posts/serie1_ransomware_cap3/</link>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/posts/serie1_ransomware_cap3/</guid>
+      <description>&lt;p&gt;Durante la historia los ataques de tipo ransomware han evolucionado bastante y su evolución no ha sido lineal ni casual, sino que ha seguido muy de cerca los cambios en la tecnologia, el internet y hasta modelos de negocios criminales. Entender esa evolucion te da bastante ventaja para entender y defendernos de este tipo de amenazas.&lt;/p&gt;&#xA;&lt;p&gt;Al inicio, el ransomware era bastante rudimentario, uno de los primeros casos conocidos fue el llamado AIDS Trojan (tambien conocido como el ransomware del SIDA), que se distribuía en disquetes fisicos, este no cifraba archivos directamente sino que ocultaba los archivos en el disco C y cifraba su nombre para que las victimas no pudieran encontrarlos y por supuesto pedia un pago de rescate por correo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Serie Ransomware Deep Dive: Capitulo 2</title>
+      <link>https://0xdarkz.com/posts/serie1_ransomware_cap2/</link>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/posts/serie1_ransomware_cap2/</guid>
+      <description>&lt;p&gt;Hace mucho tiempo, antes de que las amenazas informaticas estuvieran en su auge, antes de que existieran amenazas como ransomware y antes de que la mayoria de las personas que estan leyendo este post hayan tenido una computadora, Eddy Willens que trabajaba para una compañia de seguros en Bélgica inserto uno de los 20,000 &lt;strong&gt;diskettes&lt;/strong&gt; que se enviaron por correo a los asistentes que participaron en la conferencia sobre el SIDA de la Organizacion Mundial de la Salud en  Estocolmo, a peticion de su jefe quien le habia pedido que comprobara su contenido.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Evil Origin Detection</title>
+      <link>https://0xdarkz.com/proyectos/evilorigindetection/</link>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/proyectos/evilorigindetection/</guid>
+      <description>&lt;h1 id=&#34;evil-origin-detection&#34;&gt;Evil Origin Detection&lt;/h1&gt;&#xA;&lt;p&gt;Cuando era analista en un SOC, tenia que revisar muchas alertas al dia en donde tenia que validar que estos indicadores no sean de compromiso (IOC), para eso usaba herramientas como Virustotal, AbuseipDB, entre otras herramientas de inteligencia, sin embargo para cada indicador tenia que abrir muchas herramientas y seguir un proceso para determinar si realmente son maliciosas o no.&lt;/p&gt;&#xA;&lt;p&gt;Aun asi a veces tenia que ir mas alla de lo que estas plataformas me aportaban, como hacer OSINT para saber sobre el origen de ese indicador y porque esta interactuando en la infraestructura, usaba dorks de google, tecnicas de dns pasivo, ver el contenido de esa URL para ver relamente de que trata, revisar puertos abiertos, indagar mas en el proveedor de esa IP o incluso geolocalizar dicho indicador.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Serie Ransomware Deep Dive: Capitulo 1</title>
+      <link>https://0xdarkz.com/posts/serie1_ransomware_cap1/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/posts/serie1_ransomware_cap1/</guid>
+      <description>&lt;p&gt;Antes de empezar a analizar como funcionan los ransomware, su historia y demas objetivos dentro de esta investigacion, tenemos que definir que es un ransomware y cuales tipos de ransomware existen, esto nos podra ayudar a tener una idea mas clara de lo que realmente son y como funcionan.&lt;/p&gt;&#xA;&lt;p&gt;Segun microsoft detalla &lt;a href=&#34;https://www.microsoft.com/es-mx/security/business/security-101/what-is-ransomware&#34;&gt;aqui&lt;/a&gt;, El ransomware es un tipo de software malintencionado, o malware, que los ciberdelincuentes usan para bloquear el acceso a los datos críticos de una víctima, destruirlos o publicarlos a menos que se pague un rescate.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FortiSIEM CMDB Validator</title>
+      <link>https://0xdarkz.com/proyectos/fortisiem-cmdb-validator/</link>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/proyectos/fortisiem-cmdb-validator/</guid>
+      <description>&lt;h1 id=&#34;fortisiem-cmdb-validator&#34;&gt;FortiSIEM CMDB Validator&lt;/h1&gt;&#xA;&lt;p&gt;La idea de este proyecto fue poder crear una herramienta para poder generar un reporte con informacion sobre el estado actual en cuanto al envio de bitacoras centralizadas en el FortiSIEM.&lt;/p&gt;&#xA;&lt;p&gt;La motivacion fue debido a que no se tenia una forma de poder validar que tipos de auditorias se estan centralizando en el SIEM de cada equipo integrado, mas alla del protocolo de integracion, lo cual no te permite validar si estos equipos realmente se estan centralizando de forma correcta, especialmente en metodos de integracion como Syslog en donde el SIEM no tiene control de lo que se esta monitoreando, solo sabe que esta recibiendo eventos pero no controla lo que recibe.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Primer post</title>
+      <link>https://0xdarkz.com/posts/primer_post/</link>
+      <pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/posts/primer_post/</guid>
+      <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello World&lt;/h2&gt;&#xA;&lt;p&gt;print (&amp;ldquo;Estoy vivo&amp;rdquo;)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sobre mí</title>
+      <link>https://0xdarkz.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/about/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

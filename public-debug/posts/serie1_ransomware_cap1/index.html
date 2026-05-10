@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serie Ransomware Deep Dive: Capitulo 1 | 0xdarkz</title>
+  <meta name="description" content="Fundamentos de que es el Ransomware">
+  <meta property="og:title" content="Serie Ransomware Deep Dive: Capitulo 1">
+  <meta property="og:description" content="Fundamentos de que es el Ransomware">
+  <meta property="og:image" content="https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap1_serieransomware.png?raw=true">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Kalam:wght@300;400;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="/css/blog.css">
+  
+  
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">✦</text></svg>'>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <canvas id="stars-canvas"></canvas>
+<div class="nebula nb1"></div>
+<div class="nebula nb2"></div>
+<div class="nebula nb3"></div>
+
+    <nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="/" class="navbar-logo">
+      StaryDarkz
+    </a>
+    <ul class="navbar-nav">
+      
+      <li>
+        <a href="/" class="nav-link">
+          Inicio
+        </a>
+      </li>
+      
+      <li>
+        <a href="/posts/" class="nav-link">
+          Blog
+        </a>
+      </li>
+      
+      <li>
+        <a href="/proyectos/" class="nav-link">
+          Proyectos
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about/" class="nav-link">
+          Sobre mí
+        </a>
+      </li>
+      
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    
+    <a href="/">Inicio</a>
+    
+    <a href="/posts/">Blog</a>
+    
+    <a href="/proyectos/">Proyectos</a>
+    
+    <a href="/about/">Sobre mí</a>
+    
+  </div>
+</nav>
+
+    <main>
+      
+
+
+<div class="container">
+
+  <article class="single-post">
+    <div class="post-hero">
+      <div class="post-hero-tags">
+        <span class="post-card-tag tag-seriedeinvestigacion">Serie de Investigacion</span>
+        
+        <span class="ptag">Serie:Ransomware Deep Dive</span>
+        
+      </div>
+      <h1 class="post-hero-title">Serie Ransomware Deep Dive: Capitulo 1</h1>
+      <div class="post-hero-meta">
+        <span>📅 4 May 2026</span>
+        <span>⏱ 3 min de lectura</span>
+        <span>✍ StaryDarkz</span>
+      </div>
+    </div>
+
+    
+    <img src="https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap1_serieransomware.png?raw=true" alt="Serie Ransomware Deep Dive: Capitulo 1" class="post-cover">
+    
+
+    <div class="post-content">
+      <p>Antes de empezar a analizar como funcionan los ransomware, su historia y demas objetivos dentro de esta investigacion, tenemos que definir que es un ransomware y cuales tipos de ransomware existen, esto nos podra ayudar a tener una idea mas clara de lo que realmente son y como funcionan.</p>
+<p>Segun microsoft detalla <a href="https://www.microsoft.com/es-mx/security/business/security-101/what-is-ransomware">aqui</a>, El ransomware es un tipo de software malintencionado, o malware, que los ciberdelincuentes usan para bloquear el acceso a los datos críticos de una víctima, destruirlos o publicarlos a menos que se pague un rescate.</p>
+<p>La palabra ransom viene de “Ransom” que significa rescate y “<a href="https://www.computerhope.com/jargon/w/ware.htm">ware</a>” que se suele utilizar como sufijo para describir diferentes tipos de productos informáticos o componentes, ya sean tangibles o intangibles, de ahi que ransomware significa software de rescate, normalmente malicioso.</p>
+<h2 id="tipos-de-ransomware"><strong>Tipos de ransomware</strong></h2>
+<p>Podemos dividir los tipos de ransomware en dos categorias:</p>
+<p><strong>Ransomware de cifrado (Crypyo Ranwomware)</strong></p>
+<p>En un ataque de ransomware criptográfico, el atacante cifra los archivos o datos confidenciales de una víctima para que no pueda acceder a ellos a menos que pague un rescate solicitado. En teoría, una vez que la víctima paga, el atacante entrega una clave de descifrado que le da acceso a los archivos o datos, pero no hay ninguna garantía. Muchas organizaciones han perdido permanentemente el acceso a sus archivos incluso después de pagar el rescate.</p>
+<p><strong>Ransomware de bloqueo (Locker Ransomware)</strong></p>
+<p>En ransomware de ransomware de bloqueo, los actores malintencionados bloquean a una víctima el acceso a su dispositivo y les presentan una nota de rescate en pantalla con instrucciones sobre cómo pagar un rescate para recuperar el acceso. Esta forma de ransomware no suele implicar el cifrado, por lo que, cuando la víctima recupera el acceso a su dispositivo, se conservan los datos y archivos confidenciales. El ransomware de bloqueo se usa normalmente en dispositivos móviles.</p>
+<p>Estas dos formas principales de ransomware se dividen en los siguientes subtipos:</p>
+<ul>
+<li><strong>Software de intimidación:</strong> El software de intimidación usa el miedo para que la gente pague un rescate. En estos tipos de ciberataques, los actores malintencionados se hacen pasar por una agencia de cumplimiento de la ley y envían un mensaje a la víctima en el que se le inculpa de un delito y le piden una sanción.</li>
+<li><strong>Doxware:</strong> En Doxware, los actores malintencionados roban información personal y amenazan con revelarla públicamente si no se paga un rescate.</li>
+<li><strong>Ransomware de extorsión doble:</strong> En el ransomware de extorsión doble, los atacantes no solo cifran archivos, sino que también roban datos confidenciales y amenazan con liberarlos públicamente si no se paga el rescate.</li>
+<li><strong>Destrucción de datos:</strong> Con la destrucción de datos, se amenaza con destruir los datos de la víctima si esta no paga el rescate.</li>
+</ul>
+<h2 id="puntos-clave"><strong>Puntos clave</strong></h2>
+<p>Segun una investigacion realizada por MalwareByte <a href="https://www.malwarebytes.com/es/ransomware">aqui</a>, podemos destacar los siguientes puntos acerca de los ataques de ransomware:</p>
+<ul>
+<li>El ransomware es un tipo de malware que impide a los usuarios acceder a su sistema o a sus archivos personales hasta que se abone el rescate. De ahí su nombre, «ransomware».</li>
+<li>En 2023, <a href="https://www.threatdown.com/dl-state-of-ransomware-2024">los pagos por ransomware superaron los 1000 millones de dólares anuales por</a> primera vez, mientras que el pago medio por rescate ascendió a 620 000 dólares.</li>
+<li><a href="https://www.threatdown.com/dl-state-of-ransomware-2024">En 2024, Threatdown</a> un aumento del 63 % en los ataques de ransomware en Estados Unidos y <a href="https://www.threatdown.com/dl-state-of-ransomware-2024">Threatdown</a> un incremento del 67 % en los ataques de ransomware en el Reino Unido.</li>
+<li>En 2026, los atacantes han mejorado la rapidez y el sigilo de sus ataques gracias a nuevas tácticas.</li>
+<li>Existen diferentes tipos de ransomware, como el scareware, los programas que bloquean la pantalla, el ransomware de cifrado y otros.</li>
+<li>Los ataques de ransomware afectan a las empresas, pero los particulares también son víctimas de ellos.</li>
+</ul>
+<p>Durante esta serie nos estaremos enfocando en los ransomware de tipo de cifrado o crypto ransomware.</p>
+<p>La mayoria de amenazas de este tipo siguen un proceso de 3 pasos:</p>
+<p><img src="https://github.com/starydarkz/starydarkz.github.io/blob/main/images/procesoransom001.png?raw=true" alt="ProcesoRansomware"></p>
+
+    </div>
+
+    <div class="post-footer-nav">
+      
+      <a href="/posts/primer_post/" class="post-nav-btn post-nav-prev">
+        <span class="post-nav-label">← anterior</span>
+        <span class="post-nav-title">Primer post</span>
+      </a>
+      
+      
+      <a href="/posts/serie1_ransomware_cap2/" class="post-nav-btn post-nav-next">
+        <span class="post-nav-label">siguiente →</span>
+        <span class="post-nav-title">Serie Ransomware Deep Dive: Capitulo 2</span>
+      </a>
+      
+    </div>
+  </article>
+
+</div>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-logo">✦ StaryDarkz</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/enddyfigueroa/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="footer-sep">·</span>
+      <a href="https://t.me/StaryDarkz" target="_blank" rel="noopener">Telegram</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/StaryDarkz" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="footer-copy">✦ 2026 · todos los derechos reservados ✦</div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/stars.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

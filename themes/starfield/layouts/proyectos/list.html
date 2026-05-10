@@ -2,36 +2,46 @@
 <div class="container">
 
   <div class="proyectos-hero">
+    <div class="orbital-mark" aria-hidden="true">
+      <span class="orbital-core"></span>
+      <span class="orbital-ring orbital-ring-one"></span>
+      <span class="orbital-ring orbital-ring-two"></span>
+    </div>
     <div class="blog-hero-label">// herramientas open source</div>
     <h1>Mis <span class="accent">proyectos</span></h1>
-    <p>Herramientas que construí para resolver problemas reales. Todo en GitHub, todo libre.</p>
+    <p>Herramientas que construí para resolver problemas reales. Módulos en órbita, telemetría limpia y código listo para despegar.</p>
     <div class="blog-stats">
       <div class="bstat"><strong>{{ len .Pages }}</strong> proyectos</div>
       <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" class="bstat-link">ver en GitHub →</a>
     </div>
   </div>
 
-  <div class="filters-row">
+  <div class="project-filter-panel">
     <span class="filter-label">lenguaje</span>
-    <button class="filter-btn filter-all active" data-lang="all">✦ todos</button>
-    <button class="filter-btn filter-py" data-lang="python">Python</button>
-    <button class="filter-btn filter-go" data-lang="go">Go</button>
-    <button class="filter-btn filter-rust" data-lang="rust">Rust</button>
-    <button class="filter-btn filter-c" data-lang="c">C/C++</button>
-    <button class="filter-btn filter-bash" data-lang="bash">Bash</button>
+    <div class="project-filter-grid">
+      <button class="filter-btn filter-all active" data-lang="all">✦ todos</button>
+      <button class="filter-btn filter-py" data-lang="python">Python</button>
+      <button class="filter-btn filter-go" data-lang="go">Go</button>
+      <button class="filter-btn filter-rust" data-lang="rust">Rust</button>
+      <button class="filter-btn filter-c" data-lang="c">C/C++</button>
+      <button class="filter-btn filter-bash" data-lang="bash">Bash</button>
+    </div>
   </div>
 
   <div class="proyectos-grid" id="proyectos-grid">
     {{ range .Pages }}
     {{ $langSlug := .Params.language | lower }}
     <a href="{{ .RelPermalink }}" class="proj-full-card" data-lang="{{ $langSlug }}" data-status="{{ .Params.status }}">
+      <div class="proj-card-orbit" aria-hidden="true"></div>
       {{ if .Params.cover }}
       <div class="proj-cover">
         <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy">
         <div class="proj-cover-overlay"></div>
+        <div class="proj-scanline"></div>
       </div>
       {{ end }}
       <div class="proj-full-body">
+        <div class="proj-coordinates">ORB-{{ printf "%02d" .Weight }} // {{ upper $langSlug }}</div>
         <div class="proj-full-header">
           <h3 class="proj-full-name">{{ .Title }}</h3>
           <div class="proj-badges">

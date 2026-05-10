@@ -7,7 +7,7 @@
     <p>Investigaciones, writeups, análisis de malware y técnicas de red team. Todo documentado desde la trinchera.</p>
     <div class="blog-stats">
       <div class="bstat"><strong>{{ len .Site.RegularPages }}</strong> posts</div>
-      <div class="bstat"><strong>6</strong> categorías</div>
+      <div class="bstat"><strong>{{ len .Site.Taxonomies.tags }}</strong> tags</div>
     </div>
   </div>
 
@@ -18,28 +18,44 @@
       <input class="search-input" id="search-input" type="text" placeholder="buscar investigaciones, técnicas, herramientas...">
       <span class="search-clear" id="search-clear">✕ limpiar</span>
     </div>
-    <div class="search-hint">// busca por título, descripción, tag o categoría</div>
+    <div class="search-hint">// busca por título, descripción o tag</div>
   </div>
 
   <!-- FILTERS -->
   <div class="filters-row">
-    <span class="filter-label">filtrar</span>
-    <button class="filter-btn filter-all active" data-cat="all">✦ todos</button>
-    <button class="filter-btn filter-web" data-cat="web">Web</button>
-    <button class="filter-btn filter-malware" data-cat="malware">Malware</button>
-    <button class="filter-btn filter-redteam" data-cat="redteam">Red Team</button>
-    <button class="filter-btn filter-ctf" data-cat="ctf">CTF</button>
-    <button class="filter-btn filter-crypto" data-cat="crypto">Crypto</button>
-    <button class="filter-btn filter-network" data-cat="network">Network</button>
+    <span class="filter-label">series</span>
+    <button class="filter-btn filter-all active" data-tag="all">✦ todos</button>
+    {{ $seenSeries := newScratch }}
+    {{ range .Site.RegularPages }}
+    {{ range .Params.tags }}
+    {{ $tag := . | lower }}
+    {{ if hasPrefix $tag "serie:" }}
+    {{ if not ($seenSeries.Get $tag) }}
+    <button class="filter-btn tag-item filter-series" data-tag="{{ $tag }}">{{ . }}</button>
+    {{ $seenSeries.Set $tag true }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
   </div>
 
   <!-- TAGS CLOUD -->
   <div class="tags-section">
-    <div class="tags-head">tags populares</div>
+    <div class="tags-head">tags generales</div>
     <div class="tags-cloud" id="tags-cloud">
-      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-      <span class="tag-item" data-tag="{{ $name | lower }}">
-        {{ $name }}<span class="tag-count">{{ len $taxonomy }}</span>
+      {{ $postTags := dict }}
+      {{ range where .Site.RegularPages "Section" "posts" }}
+      {{ range .Params.tags }}
+      {{ $tag := . | lower }}
+      {{ if not (hasPrefix $tag "serie:") }}
+      {{ $current := index $postTags $tag | default 0 }}
+      {{ $postTags = merge $postTags (dict $tag (add $current 1)) }}
+      {{ end }}
+      {{ end }}
+      {{ end }}
+      {{ range $name, $count := $postTags }}
+      <span class="tag-item" data-tag="{{ $name }}">
+        {{ $name }}<span class="tag-count">{{ $count }}</span>
       </span>
       {{ end }}
     </div>
@@ -67,9 +83,6 @@
     <div class="no-results-text">sin resultados en el cosmos</div>
     <div class="no-results-sub">// intenta con otras palabras o limpia los filtros</div>
   </div>
-
-  <!-- Embed posts data for search -->
-
 
   {{ template "_internal/pagination.html" . }}
 

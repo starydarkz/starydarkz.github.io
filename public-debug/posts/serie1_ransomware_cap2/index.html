@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serie Ransomware Deep Dive: Capitulo 2 | 0xdarkz</title>
+  <meta name="description" content="La evolucion del ransomware, el genesis">
+  <meta property="og:title" content="Serie Ransomware Deep Dive: Capitulo 2">
+  <meta property="og:description" content="La evolucion del ransomware, el genesis">
+  <meta property="og:image" content="https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap2_serieransomware.png?raw=true">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Kalam:wght@300;400;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="/css/blog.css">
+  
+  
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">✦</text></svg>'>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <canvas id="stars-canvas"></canvas>
+<div class="nebula nb1"></div>
+<div class="nebula nb2"></div>
+<div class="nebula nb3"></div>
+
+    <nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="/" class="navbar-logo">
+      StaryDarkz
+    </a>
+    <ul class="navbar-nav">
+      
+      <li>
+        <a href="/" class="nav-link">
+          Inicio
+        </a>
+      </li>
+      
+      <li>
+        <a href="/posts/" class="nav-link">
+          Blog
+        </a>
+      </li>
+      
+      <li>
+        <a href="/proyectos/" class="nav-link">
+          Proyectos
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about/" class="nav-link">
+          Sobre mí
+        </a>
+      </li>
+      
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    
+    <a href="/">Inicio</a>
+    
+    <a href="/posts/">Blog</a>
+    
+    <a href="/proyectos/">Proyectos</a>
+    
+    <a href="/about/">Sobre mí</a>
+    
+  </div>
+</nav>
+
+    <main>
+      
+
+
+<div class="container">
+
+  <article class="single-post">
+    <div class="post-hero">
+      <div class="post-hero-tags">
+        <span class="post-card-tag tag-seriedeinvestigacion">Serie de Investigacion</span>
+        
+        <span class="ptag">Serie:Ransomware Deep Dive</span>
+        
+      </div>
+      <h1 class="post-hero-title">Serie Ransomware Deep Dive: Capitulo 2</h1>
+      <div class="post-hero-meta">
+        <span>📅 7 May 2026</span>
+        <span>⏱ 3 min de lectura</span>
+        <span>✍ StaryDarkz</span>
+      </div>
+    </div>
+
+    
+    <img src="https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap2_serieransomware.png?raw=true" alt="Serie Ransomware Deep Dive: Capitulo 2" class="post-cover">
+    
+
+    <div class="post-content">
+      <p>Hace mucho tiempo, antes de que las amenazas informaticas estuvieran en su auge, antes de que existieran amenazas como ransomware y antes de que la mayoria de las personas que estan leyendo este post hayan tenido una computadora, Eddy Willens que trabajaba para una compañia de seguros en Bélgica inserto uno de los 20,000 <strong>diskettes</strong> que se enviaron por correo a los asistentes que participaron en la conferencia sobre el SIDA de la Organizacion Mundial de la Salud en  Estocolmo, a peticion de su jefe quien le habia pedido que comprobara su contenido.</p>
+<p><img src="https://media.cnn.com/api/v1/images/stellar/prod/210514101822-02-eddy-williems-ransomware.jpg?q=w_1600,h_900,x_0,y_0,c_fill/w_1316/f_webp" alt="Diskette con el primer ransomware AIDS"></p>
+<p>Diskette con el primer ransomware AIDS</p>
+<p>Los <strong>diskettes</strong> que se distribuyeron contenían un programa para analizar el riesgo que podría tener cualquier persona de contraer SIDA.Pero ironicamente estos diskettes estaban infectados con el primer malware de tipo ransomware documentado hasta la fecha.</p>
+<p>Era diciembre del 1989, cuando Eddy Willems esperaba encontrar investigaciones médicas al cargar el contenido del disco. En cambio, se convirtió en víctima del primer ataque de ransomware.</p>
+<p><img src="https://www.shutterstock.com/editorial/image-editorial/ObT4Ya5dO2Dccd16MzgzNw==/eddy-willems-550nw-9628066a.jpg" alt="Eddy Willems"></p>
+<p>Pocos días después de insertar el disco, el ordenador de Willems se bloqueó y apareció un mensaje exigiéndole que enviara 189 dólares en un sobre a un apartado de correos en Panamá.</p>
+<p>El malware no se mostraba de manera inmediata, sino que se activaba <strong>después de que el ordenador donde se habían introducido se encendiera 90 veces</strong>. Al iniciarlo en la vez número 91 es cuando la amenaza daba la cara. Eso podía ser unos tres meses después de acudir al congreso. Entonces ocultaba directorios y cifraba los nombres de todos los archivos en la unidad C:, pero no el contenido de los archivos como tal.</p>
+<p>Para evitar este desaguisado había que pasar por caja, según indicaba un mensaje que aparecía en la pantalla reclamando el pago.</p>
+<p><img src="https://www.knowbe4.com/hs-fs/hubfs/AIDS-Trojan.jpg?width=780&amp;height=488&amp;name=AIDS-Trojan.jpg" alt="Nota de Rescate del Ransomware AIDS"></p>
+<blockquote>
+<p>“No pagué el rescate ni perdí ningún dato porque descubrí cómo solucionar el problema”, declaró a CNN Business.</p>
+</blockquote>
+<p>Él fue uno de los afortunados: algunas personas perdieron el trabajo de toda su vida.</p>
+<blockquote>
+<p>“Empecé a recibir llamadas de instituciones y organizaciones médicas preguntándome cómo lo había solucionado”, dijo Willems, quien ahora es experto en ciberseguridad en G Data, la empresa que desarrolló la primera solución antivirus comercial del mundo en 1987. “El incidente causó muchos daños en aquel entonces. Mucha gente perdió su trabajo. No fue algo insignificante, fue algo muy grave, incluso en aquel momento”.</p>
+</blockquote>
+<p><img src="https://media.cnn.com/api/v1/images/stellar/prod/210514101724-01-eddy-williems-ransomware.jpg?q=w_2000,h_1125,x_0,y_0,c_fill/w_1316/f_webp" alt=""></p>
+<p><strong>Referencias:</strong></p>
+<ul>
+<li><a href="https://www.escudodigital.com/ciberseguridad/primer-ransomware-historia-surgio-1989_51561_102.html">escudodigital.com</a></li>
+<li><a href="https://edition.cnn.com/2021/05/16/tech/ransomware-joseph-popp">edition.cnn.com</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-footer-nav">
+      
+      <a href="/posts/serie1_ransomware_cap1/" class="post-nav-btn post-nav-prev">
+        <span class="post-nav-label">← anterior</span>
+        <span class="post-nav-title">Serie Ransomware Deep Dive: Capitulo 1</span>
+      </a>
+      
+      
+      <a href="/posts/serie1_ransomware_cap3/" class="post-nav-btn post-nav-next">
+        <span class="post-nav-label">siguiente →</span>
+        <span class="post-nav-title">Serie Ransomware Deep Dive: Capitulo 3</span>
+      </a>
+      
+    </div>
+  </article>
+
+</div>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-logo">✦ StaryDarkz</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/enddyfigueroa/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="footer-sep">·</span>
+      <a href="https://t.me/StaryDarkz" target="_blank" rel="noopener">Telegram</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/StaryDarkz" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="footer-copy">✦ 2026 · todos los derechos reservados ✦</div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/stars.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

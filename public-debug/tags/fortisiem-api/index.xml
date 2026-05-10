@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fortisiem-Api on 0xdarkz</title>
+    <link>https://0xdarkz.com/tags/fortisiem-api/</link>
+    <description>Recent content in Fortisiem-Api on 0xdarkz</description>
+    <generator>Hugo</generator>
+    <language>es-419</language>
+    <lastBuildDate>Sun, 03 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://0xdarkz.com/tags/fortisiem-api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FortiSIEM CMDB Validator</title>
+      <link>https://0xdarkz.com/proyectos/fortisiem-cmdb-validator/</link>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/proyectos/fortisiem-cmdb-validator/</guid>
+      <description>&lt;h1 id=&#34;fortisiem-cmdb-validator&#34;&gt;FortiSIEM CMDB Validator&lt;/h1&gt;&#xA;&lt;p&gt;La idea de este proyecto fue poder crear una herramienta para poder generar un reporte con informacion sobre el estado actual en cuanto al envio de bitacoras centralizadas en el FortiSIEM.&lt;/p&gt;&#xA;&lt;p&gt;La motivacion fue debido a que no se tenia una forma de poder validar que tipos de auditorias se estan centralizando en el SIEM de cada equipo integrado, mas alla del protocolo de integracion, lo cual no te permite validar si estos equipos realmente se estan centralizando de forma correcta, especialmente en metodos de integracion como Syslog en donde el SIEM no tiene control de lo que se esta monitoreando, solo sabe que esta recibiendo eventos pero no controla lo que recibe.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

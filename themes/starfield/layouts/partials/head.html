@@ -15,6 +15,6 @@
   {{ if .IsHome }}<link rel="stylesheet" href="{{ "css/home.css" | relURL }}">{{ end }}
   {{ if eq .Type "posts" }}<link rel="stylesheet" href="{{ "css/blog.css" | relURL }}">{{ end }}
   {{ if eq .Layout "about" }}<link rel="stylesheet" href="{{ "css/about.css" | relURL }}">{{ end }}
-  {{ if eq .Type "proyectos" }}<link rel="stylesheet" href="{{ "css/proyectos.css" | relURL }}">{{ end }}
+  {{ if eq .Type "proyectos" }}<link rel="stylesheet" href="{{ "css/proyectos.css?v=2" | relURL }}">{{ end }}
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">✦</text></svg>'>
 </head>

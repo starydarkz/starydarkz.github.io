@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Serie:Ransomware Deep Dive on 0xdarkz</title>
+    <link>https://0xdarkz.com/tags/serieransomware-deep-dive/</link>
+    <description>Recent content in Serie:Ransomware Deep Dive on 0xdarkz</description>
+    <generator>Hugo</generator>
+    <language>es-419</language>
+    <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://0xdarkz.com/tags/serieransomware-deep-dive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serie Ransomware Deep Dive: Capitulo 3</title>
+      <link>https://0xdarkz.com/posts/serie1_ransomware_cap3/</link>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/posts/serie1_ransomware_cap3/</guid>
+      <description>&lt;p&gt;Durante la historia los ataques de tipo ransomware han evolucionado bastante y su evolución no ha sido lineal ni casual, sino que ha seguido muy de cerca los cambios en la tecnologia, el internet y hasta modelos de negocios criminales. Entender esa evolucion te da bastante ventaja para entender y defendernos de este tipo de amenazas.&lt;/p&gt;&#xA;&lt;p&gt;Al inicio, el ransomware era bastante rudimentario, uno de los primeros casos conocidos fue el llamado AIDS Trojan (tambien conocido como el ransomware del SIDA), que se distribuía en disquetes fisicos, este no cifraba archivos directamente sino que ocultaba los archivos en el disco C y cifraba su nombre para que las victimas no pudieran encontrarlos y por supuesto pedia un pago de rescate por correo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Serie Ransomware Deep Dive: Capitulo 2</title>
+      <link>https://0xdarkz.com/posts/serie1_ransomware_cap2/</link>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/posts/serie1_ransomware_cap2/</guid>
+      <description>&lt;p&gt;Hace mucho tiempo, antes de que las amenazas informaticas estuvieran en su auge, antes de que existieran amenazas como ransomware y antes de que la mayoria de las personas que estan leyendo este post hayan tenido una computadora, Eddy Willens que trabajaba para una compañia de seguros en Bélgica inserto uno de los 20,000 &lt;strong&gt;diskettes&lt;/strong&gt; que se enviaron por correo a los asistentes que participaron en la conferencia sobre el SIDA de la Organizacion Mundial de la Salud en  Estocolmo, a peticion de su jefe quien le habia pedido que comprobara su contenido.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Serie Ransomware Deep Dive: Capitulo 1</title>
+      <link>https://0xdarkz.com/posts/serie1_ransomware_cap1/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/posts/serie1_ransomware_cap1/</guid>
+      <description>&lt;p&gt;Antes de empezar a analizar como funcionan los ransomware, su historia y demas objetivos dentro de esta investigacion, tenemos que definir que es un ransomware y cuales tipos de ransomware existen, esto nos podra ayudar a tener una idea mas clara de lo que realmente son y como funcionan.&lt;/p&gt;&#xA;&lt;p&gt;Segun microsoft detalla &lt;a href=&#34;https://www.microsoft.com/es-mx/security/business/security-101/what-is-ransomware&#34;&gt;aqui&lt;/a&gt;, El ransomware es un tipo de software malintencionado, o malware, que los ciberdelincuentes usan para bloquear el acceso a los datos críticos de una víctima, destruirlos o publicarlos a menos que se pague un rescate.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

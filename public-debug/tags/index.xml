@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 0xdarkz</title>
+    <link>https://0xdarkz.com/tags/</link>
+    <description>Recent content in Tags on 0xdarkz</description>
+    <generator>Hugo</generator>
+    <language>es-419</language>
+    <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://0xdarkz.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serie:Ransomware Deep Dive</title>
+      <link>https://0xdarkz.com/tags/serieransomware-deep-dive/</link>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/tags/serieransomware-deep-dive/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>https://0xdarkz.com/tags/automation/</link>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cti</title>
+      <link>https://0xdarkz.com/tags/cti/</link>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/tags/cti/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Osint</title>
+      <link>https://0xdarkz.com/tags/osint/</link>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/tags/osint/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fortisiem</title>
+      <link>https://0xdarkz.com/tags/fortisiem/</link>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/tags/fortisiem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fortisiem-Api</title>
+      <link>https://0xdarkz.com/tags/fortisiem-api/</link>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/tags/fortisiem-api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://0xdarkz.com/tags/python/</link>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fisrt</title>
+      <link>https://0xdarkz.com/tags/fisrt/</link>
+      <pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://0xdarkz.com/tags/fisrt/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

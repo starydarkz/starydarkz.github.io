@@ -3,7 +3,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">investigador de seguridad</div>
+    <div class="hero-eyebrow">investigaciones de ciberseguridad</div>
     <h1>Explorando el<br><span class="accent">ciberespacio</span></h1>
     <p class="hero-sub">{{ .Site.Params.description }}</p>
     <div class="hero-cta">
@@ -59,6 +59,11 @@
   <div class="projects-preview-grid">
     {{ range first 3 (where .Site.RegularPages "Type" "proyectos") }}
     <a href="{{ .RelPermalink }}" class="proj-card">
+      {{ with .Params.cover }}
+      <div class="proj-card-cover">
+        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+      </div>
+      {{ end }}
       <div class="proj-header">
         <div class="proj-name">{{ .Title }}</div>
         <div class="proj-lang">{{ .Params.language }}</div>

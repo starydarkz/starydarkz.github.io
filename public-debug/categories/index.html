@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories | 0xdarkz</title>
+  <meta name="description" content="Investigaciones de ciberseguridad, threat hunting, cyber threat intelligence, automatización y otras curiosidades">
+  <meta property="og:title" content="Categories">
+  <meta property="og:description" content="Investigaciones de ciberseguridad, threat hunting, cyber threat intelligence, automatización y otras curiosidades">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Kalam:wght@300;400;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  
+  
+  
+  
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">✦</text></svg>'>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <canvas id="stars-canvas"></canvas>
+<div class="nebula nb1"></div>
+<div class="nebula nb2"></div>
+<div class="nebula nb3"></div>
+
+    <nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="/" class="navbar-logo">
+      StaryDarkz
+    </a>
+    <ul class="navbar-nav">
+      
+      <li>
+        <a href="/" class="nav-link">
+          Inicio
+        </a>
+      </li>
+      
+      <li>
+        <a href="/posts/" class="nav-link">
+          Blog
+        </a>
+      </li>
+      
+      <li>
+        <a href="/proyectos/" class="nav-link">
+          Proyectos
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about/" class="nav-link">
+          Sobre mí
+        </a>
+      </li>
+      
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    
+    <a href="/">Inicio</a>
+    
+    <a href="/posts/">Blog</a>
+    
+    <a href="/proyectos/">Proyectos</a>
+    
+    <a href="/about/">Sobre mí</a>
+    
+  </div>
+</nav>
+
+    <main>
+      
+<div class="container">
+
+  <div class="blog-hero">
+    <div class="blog-hero-label">// archivo de investigaciones</div>
+    <h1>El <span class="accent">blog</span></h1>
+    <p>Investigaciones, writeups, análisis de malware y técnicas de red team. Todo documentado desde la trinchera.</p>
+    <div class="blog-stats">
+      <div class="bstat"><strong>7</strong> posts</div>
+      <div class="bstat"><strong>6</strong> categorías</div>
+    </div>
+  </div>
+
+  
+  <div class="search-wrap">
+    <div class="search-box">
+      <span class="search-icon">⌕</span>
+      <input class="search-input" id="search-input" type="text" placeholder="buscar investigaciones, técnicas, herramientas...">
+      <span class="search-clear" id="search-clear">✕ limpiar</span>
+    </div>
+    <div class="search-hint">// busca por título, descripción, tag o categoría</div>
+  </div>
+
+  
+  <div class="filters-row">
+    <span class="filter-label">filtrar</span>
+    <button class="filter-btn filter-all active" data-cat="all">✦ todos</button>
+    
+    
+    <button class="filter-btn" data-cat="malware">malware</button>
+    
+    
+    <button class="filter-btn" data-cat="seriedeinvestigacion">serie de investigacion</button>
+    
+  </div>
+
+  
+  <div class="tags-section">
+    <div class="tags-head">tags populares</div>
+    <div class="tags-cloud" id="tags-cloud">
+      
+      <span class="tag-item" data-tag="automation">
+        automation<span class="tag-count">2</span>
+      </span>
+      
+      <span class="tag-item" data-tag="cti">
+        cti<span class="tag-count">1</span>
+      </span>
+      
+      <span class="tag-item" data-tag="fisrt">
+        fisrt<span class="tag-count">1</span>
+      </span>
+      
+      <span class="tag-item" data-tag="fortisiem">
+        fortisiem<span class="tag-count">1</span>
+      </span>
+      
+      <span class="tag-item" data-tag="fortisiem-api">
+        fortisiem-api<span class="tag-count">1</span>
+      </span>
+      
+      <span class="tag-item" data-tag="osint">
+        osint<span class="tag-count">1</span>
+      </span>
+      
+      <span class="tag-item" data-tag="python">
+        python<span class="tag-count">1</span>
+      </span>
+      
+      <span class="tag-item" data-tag="serie:ransomware deep dive">
+        serie:ransomware deep dive<span class="tag-count">3</span>
+      </span>
+      
+    </div>
+  </div>
+
+  
+  <div class="results-row">
+    <div class="results-info">mostrando <span id="result-count">2</span> resultados</div>
+    <select class="sort-select" id="sort-select">
+      <option value="newest">// más recientes</option>
+      <option value="oldest">// más antiguos</option>
+      <option value="readtime">// lectura rápida</option>
+    </select>
+  </div>
+
+  
+  <div class="posts-grid" id="posts-grid">
+    
+      
+
+<a href="/categories/serie-de-investigacion/" class="post-card"
+   data-cat="web"
+   data-tags=""
+   data-title="serie de investigacion"
+   data-desc=""
+   data-date="2026-05-08"
+   data-rt="5">
+  <div class="post-card-img post-img-web">
+    
+      <span class="post-card-emoji">
+        🔐
+        
+      </span>
+    
+    <div class="post-card-img-overlay"></div>
+    <span class="post-card-tag tag-web">Web</span>
+  </div>
+  <div class="post-card-body">
+    <div class="post-card-date">2026-05-08</div>
+    <h3 class="post-card-title">Serie De Investigacion</h3>
+    <p class="post-card-desc"></p>
+  </div>
+  <div class="post-card-footer">
+    <div class="post-card-meta">
+      <span class="post-card-readtime"> min</span>
+      <div class="post-card-tags">
+        
+      </div>
+    </div>
+    <span class="post-arrow">→</span>
+  </div>
+</a>
+
+    
+      
+
+<a href="/categories/malware/" class="post-card"
+   data-cat="web"
+   data-tags=""
+   data-title="malware"
+   data-desc=""
+   data-date="2024-04-29"
+   data-rt="5">
+  <div class="post-card-img post-img-web">
+    
+      <span class="post-card-emoji">
+        🔐
+        
+      </span>
+    
+    <div class="post-card-img-overlay"></div>
+    <span class="post-card-tag tag-web">Web</span>
+  </div>
+  <div class="post-card-body">
+    <div class="post-card-date">2024-04-29</div>
+    <h3 class="post-card-title">Malware</h3>
+    <p class="post-card-desc"></p>
+  </div>
+  <div class="post-card-footer">
+    <div class="post-card-meta">
+      <span class="post-card-readtime"> min</span>
+      <div class="post-card-tags">
+        
+      </div>
+    </div>
+    <span class="post-arrow">→</span>
+  </div>
+</a>
+
+    
+  </div>
+
+  <div class="no-results" id="no-results">
+    <div class="no-results-icon">✦</div>
+    <div class="no-results-text">sin resultados en el cosmos</div>
+    <div class="no-results-sub">// intenta con otras palabras o limpia los filtros</div>
+  </div>
+
+  
+
+</div>
+<script src="/js/blog.js"></script>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-logo">✦ StaryDarkz</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/enddyfigueroa/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="footer-sep">·</span>
+      <a href="https://t.me/StaryDarkz" target="_blank" rel="noopener">Telegram</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/StaryDarkz" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="footer-copy">✦ 2026 · todos los derechos reservados ✦</div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/stars.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

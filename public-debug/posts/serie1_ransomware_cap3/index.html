@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serie Ransomware Deep Dive: Capitulo 3 | 0xdarkz</title>
+  <meta name="description" content="La evolucion del ransomware, generaciones">
+  <meta property="og:title" content="Serie Ransomware Deep Dive: Capitulo 3">
+  <meta property="og:description" content="La evolucion del ransomware, generaciones">
+  <meta property="og:image" content="https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap3_serieransomware.png?raw=true">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Kalam:wght@300;400;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="/css/blog.css">
+  
+  
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">✦</text></svg>'>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <canvas id="stars-canvas"></canvas>
+<div class="nebula nb1"></div>
+<div class="nebula nb2"></div>
+<div class="nebula nb3"></div>
+
+    <nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="/" class="navbar-logo">
+      StaryDarkz
+    </a>
+    <ul class="navbar-nav">
+      
+      <li>
+        <a href="/" class="nav-link">
+          Inicio
+        </a>
+      </li>
+      
+      <li>
+        <a href="/posts/" class="nav-link">
+          Blog
+        </a>
+      </li>
+      
+      <li>
+        <a href="/proyectos/" class="nav-link">
+          Proyectos
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about/" class="nav-link">
+          Sobre mí
+        </a>
+      </li>
+      
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    
+    <a href="/">Inicio</a>
+    
+    <a href="/posts/">Blog</a>
+    
+    <a href="/proyectos/">Proyectos</a>
+    
+    <a href="/about/">Sobre mí</a>
+    
+  </div>
+</nav>
+
+    <main>
+      
+
+
+<div class="container">
+
+  <article class="single-post">
+    <div class="post-hero">
+      <div class="post-hero-tags">
+        <span class="post-card-tag tag-seriedeinvestigacion">Serie de Investigacion</span>
+        
+        <span class="ptag">Serie:Ransomware Deep Dive</span>
+        
+      </div>
+      <h1 class="post-hero-title">Serie Ransomware Deep Dive: Capitulo 3</h1>
+      <div class="post-hero-meta">
+        <span>📅 8 May 2026</span>
+        <span>⏱ 5 min de lectura</span>
+        <span>✍ StaryDarkz</span>
+      </div>
+    </div>
+
+    
+    <img src="https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap3_serieransomware.png?raw=true" alt="Serie Ransomware Deep Dive: Capitulo 3" class="post-cover">
+    
+
+    <div class="post-content">
+      <p>Durante la historia los ataques de tipo ransomware han evolucionado bastante y su evolución no ha sido lineal ni casual, sino que ha seguido muy de cerca los cambios en la tecnologia, el internet y hasta modelos de negocios criminales. Entender esa evolucion te da bastante ventaja para entender y defendernos de este tipo de amenazas.</p>
+<p>Al inicio, el ransomware era bastante rudimentario, uno de los primeros casos conocidos fue el llamado AIDS Trojan (tambien conocido como el ransomware del SIDA), que se distribuía en disquetes fisicos, este no cifraba archivos directamente sino que ocultaba los archivos en el disco C y cifraba su nombre para que las victimas no pudieran encontrarlos y por supuesto pedia un pago de rescate por correo.</p>
+<p>Con la expansión de internet en los <strong>2000</strong>, el ransomware empezó a cambiar. Aparecieron variantes que ya usaban criptografia real para cifrar archivos, aunque aun con errores o claves recuperables. En esta etapa, el objetivo era mas &ldquo;masivo&rdquo;, enfocado mas en infectar a muchos usuarios individuales con pagos relativamente pequeños.</p>
+<p>El gran salto ocurre alrededor del <strong>2013</strong> con familias como CryptoLocker, desde aqui empezamos a ver:</p>
+<ul>
+<li>Uso fuer de cifrado (RSA, AES)</li>
+<li>Pagos en Bitcoin para anonimato</li>
+<li>Infraestructura más organizada (servidores de comando y control)</li>
+</ul>
+<p>Desde ahí, el ransomware se vuelve un negocio serio&hellip;</p>
+<p>Luego viene una etapa más agresiva y destructiva con ataques como WannaCry y NotPetya en <strong>2017</strong>. Estos ataques marcaron un antes y un despues porque:</p>
+<ul>
+<li>Se propagaban automaticamente (caracteristicas de malware tipo gusanos)</li>
+<li>Afectaron hospitales, empresas y gobiernos</li>
+<li>Demostraron el impacto global de este tipo de ataques</li>
+</ul>
+<p>Despues de eso, el modelo cambia otra vez&hellip; Ya no se trata solo de infectar usuarios indiviruales, sino de atacar orgamizaciones grandes. Aqui nace el ransomware dirigido:</p>
+<ul>
+<li>Ataqques manuales (los atacantes entran, exploran y luego cifran)</li>
+<li>Exigen rescates de millones de d dólares</li>
+<li>Se enfocan en empresas críticas</li>
+</ul>
+<p>En esta etapa tambien surgen el modelo de negocio &ldquo;Ransomware-as-a-Service&rdquo; (RaaS). Básicamente, grupos desarrollan el malware y otros lo usan, repartiendo ganancias. Ejemplos incluyen REvil o DarkSide.</p>
+<p>Mas recientemente, aparece la &ldquo;doble extorcion&rdquo;:</p>
+<ol>
+<li>Cifran tus archivps</li>
+<li>Roban tus datos</li>
+<li>Amenazan con publicarlos si no pagas</li>
+</ol>
+<p>Esto hace que incluso con backups, la víctima siga bajo presión.</p>
+<p>Actualmente el ransomware es mas dirigido (ataques a medida), mas silencioso (pueden durar semanas o meses dentro de la red) y mas profecional (soporte tecnico, paneles, afiliados y mucho tiempo libre). Las tendencias apuntan a:</p>
+<ul>
+<li>Uso de ingeligencia artificial para automatizar ataques</li>
+<li>Ciberterrorismo mediante ataques a infraestructuras criticas (energia, salud&hellip;)</li>
+<li>Mayor combinación con robo de identidad y espionaje</li>
+</ul>
+
+    </div>
+
+    <div class="post-footer-nav">
+      
+      <a href="/posts/serie1_ransomware_cap2/" class="post-nav-btn post-nav-prev">
+        <span class="post-nav-label">← anterior</span>
+        <span class="post-nav-title">Serie Ransomware Deep Dive: Capitulo 2</span>
+      </a>
+      
+      
+    </div>
+  </article>
+
+</div>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-logo">✦ StaryDarkz</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/enddyfigueroa/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="footer-sep">·</span>
+      <a href="https://t.me/StaryDarkz" target="_blank" rel="noopener">Telegram</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/StaryDarkz" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="footer-copy">✦ 2026 · todos los derechos reservados ✦</div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/stars.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

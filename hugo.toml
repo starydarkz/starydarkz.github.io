@@ -1,16 +1,16 @@
-baseURL = "https://starydarkz.github.io/"
+baseURL = "https://0xdarkz.com/"
 languageCode = "es-419"
-title = "El blog de Stary"
+title = "0xdarkz"
 theme = "starfield"
 paginate = 9
 enableRobotsTXT = true
 enableEmoji = true
 
 [params]
-  author   = "El blog de Stary"
-  description = "Threat Detection/Hunting, Cyber Threat Intellence, Automatizacion y otras curiosidades"
+  author   = "StaryDarkz"
+  description = "Investigaciones de ciberseguridad, threat hunting, cyber threat intelligence, automatización y otras curiosidades"
   avatar   = "/images/avatar.jpg"
-  bio      = "Threat Detection/Hunting, Cyber Threat Intellence, Automatizacion y otsssras curiosidades..."
+  bio      = "Investigaciones de ciberseguridad, threat hunting, cyber threat intelligence, automatización y otras curiosidades."
   linkedin = "https://www.linkedin.com/in/enddyfigueroa/"
   telegram = "https://t.me/StaryDarkz"
   github   = "https://github.com/StaryDarkz"

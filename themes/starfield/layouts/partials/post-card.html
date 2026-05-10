@@ -1,6 +1,12 @@
 {{ $cat := index .Params.categories 0 | default "Web" }}
 {{ $catSlug := $cat | lower | replaceRE " " "" }}
-<a href="{{ .RelPermalink }}" class="post-card">
+<a href="{{ .RelPermalink }}" class="post-card"
+   data-cat="{{ $catSlug }}"
+   data-tags="{{ delimit (.Params.tags | default slice) "," | lower }}"
+   data-title="{{ .Title | lower }}"
+   data-desc="{{ .Params.description | default "" | lower }}"
+   data-date="{{ .Date.Format "2006-01-02" }}"
+   data-rt="{{ .Params.readtime | default 5 }}">
   <div class="post-card-img post-img-{{ $catSlug }}">
     {{ with .Params.cover }}
       <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">

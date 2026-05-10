@@ -37,7 +37,23 @@
   font-family: var(--font-sign); font-size: 15px; font-weight: 700;
   padding: 5px 15px; border-radius: 20px; cursor: pointer;
   background: transparent; transition: all 0.2s;
-  border: 1.5px solid transparent;
+  border: 1.5px solid rgba(77,255,196,0.18);
+  color: var(--textm);
+}
+.filter-btn.active, .filter-btn:hover { border-color: rgba(77,255,196,0.45); background: rgba(77,255,196,0.08); color: var(--mint); }
+.filter-series {
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  color: #4a6a85 !important;
+  border-color: rgba(255,255,255,0.07) !important;
+  background: rgba(255,255,255,0.03) !important;
+  box-shadow: none !important;
+}
+.filter-series:hover, .filter-series.active {
+  color: #4DFFC4 !important;
+  background: rgba(77,255,196,0.07) !important;
+  border-color: rgba(77,255,196,0.24) !important;
 }
 .filter-all    { color: var(--mint); border-color: rgba(77,255,196,0.38); background: rgba(77,255,196,0.07); }
 .filter-web    { color: #f87171; border-color: rgba(239,68,68,0.2); }

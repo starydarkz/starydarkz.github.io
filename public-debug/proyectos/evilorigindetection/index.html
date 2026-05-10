@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evil Origin Detection | 0xdarkz</title>
+  <meta name="description" content="Evil Origin Detection es una herramienta de codigo abierto de correalcion de inteligencia de ameanzas y fuentes abiertas.">
+  <meta property="og:title" content="Evil Origin Detection">
+  <meta property="og:description" content="Evil Origin Detection es una herramienta de codigo abierto de correalcion de inteligencia de ameanzas y fuentes abiertas.">
+  <meta property="og:image" content="https://github.com/starydarkz/EvilOriginDetection/blob/main/tool.png?raw=true">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Kalam:wght@300;400;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  
+  
+  
+  <link rel="stylesheet" href="/css/proyectos.css">
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">✦</text></svg>'>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <canvas id="stars-canvas"></canvas>
+<div class="nebula nb1"></div>
+<div class="nebula nb2"></div>
+<div class="nebula nb3"></div>
+
+    <nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="/" class="navbar-logo">
+      StaryDarkz
+    </a>
+    <ul class="navbar-nav">
+      
+      <li>
+        <a href="/" class="nav-link">
+          Inicio
+        </a>
+      </li>
+      
+      <li>
+        <a href="/posts/" class="nav-link">
+          Blog
+        </a>
+      </li>
+      
+      <li>
+        <a href="/proyectos/" class="nav-link">
+          Proyectos
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about/" class="nav-link">
+          Sobre mí
+        </a>
+      </li>
+      
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    
+    <a href="/">Inicio</a>
+    
+    <a href="/posts/">Blog</a>
+    
+    <a href="/proyectos/">Proyectos</a>
+    
+    <a href="/about/">Sobre mí</a>
+    
+  </div>
+</nav>
+
+    <main>
+      
+
+<div class="container">
+
+  <div class="proj-single-hero">
+    <a href="/proyectos/" class="back-link">← volver a proyectos</a>
+    <div class="proj-single-header">
+      <div>
+        <div class="blog-hero-label">// proyecto open source</div>
+        <h1 class="proj-single-title">Evil Origin Detection</h1>
+        <p class="proj-single-desc">Evil Origin Detection es una herramienta de codigo abierto de correalcion de inteligencia de ameanzas y fuentes abiertas.</p>
+        <div class="proj-single-meta">
+          <span class="proj-lang-badge lang-python">Python</span>
+          
+          <span class="ptag">cti</span><span class="ptag">osint</span><span class="ptag">automation</span>
+        </div>
+      </div>
+      <div class="proj-single-actions">
+        <a href="https://github.com/starydarkz/EvilOriginDetection" target="_blank" rel="noopener" class="btn-hand btn-main">
+          ↗ ver en GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  
+  <img src="https://github.com/starydarkz/EvilOriginDetection/blob/main/tool.png?raw=true" alt="Evil Origin Detection" class="post-cover">
+  
+
+  <div class="post-content proj-single-content">
+    <h1 id="evil-origin-detection">Evil Origin Detection</h1>
+<p>Cuando era analista en un SOC, tenia que revisar muchas alertas al dia en donde tenia que validar que estos indicadores no sean de compromiso (IOC), para eso usaba herramientas como Virustotal, AbuseipDB, entre otras herramientas de inteligencia, sin embargo para cada indicador tenia que abrir muchas herramientas y seguir un proceso para determinar si realmente son maliciosas o no.</p>
+<p>Aun asi a veces tenia que ir mas alla de lo que estas plataformas me aportaban, como hacer OSINT para saber sobre el origen de ese indicador y porque esta interactuando en la infraestructura, usaba dorks de google, tecnicas de dns pasivo, ver el contenido de esa URL para ver relamente de que trata, revisar puertos abiertos, indagar mas en el proveedor de esa IP o incluso geolocalizar dicho indicador.</p>
+<p>De esta forma nacio Evil Origin Detection, la idea es realizar todo este analisis, conectar todas esas plataformas de inteligencia y poder correlacionar esa informacion para identiricar patrones y posible actividad maliciosa, poder ver la actividad que ha tenido en internet!.</p>
+<p>La realidad es que existen plataformas similares que conectan otras herramientas de inteligencia de amenazas e intentan reunir la mayor cantidad de informacion posible, sin embargo la mayoria son de Pago, no estan tan enfocadas en la correlacion de informacion o carecen de funciones interesantes. Este proyecto no necesariamente sea lo mas original que exista, pero con pasion, actualizaciones constantes y apoyo de la comunidad podemos crear una buena plataforma de inteligencia.</p>
+<p>Este proecto es opensource y se encuentra alojkado en github en el enlace de arriba &ldquo;Ver Github&rdquo;, adicional actualmente este proyecto esta hosteado aqui para pruebas:</p>
+<p><a href="https://evilorigindetection.onrender.com/">https://evilorigindetection.onrender.com/</a></p>
+
+  </div>
+
+</div>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-logo">✦ StaryDarkz</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/enddyfigueroa/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="footer-sep">·</span>
+      <a href="https://t.me/StaryDarkz" target="_blank" rel="noopener">Telegram</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/StaryDarkz" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="footer-copy">✦ 2026 · todos los derechos reservados ✦</div>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/stars.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
