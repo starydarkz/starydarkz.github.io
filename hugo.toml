@@ -16,6 +16,7 @@ enableEmoji = true
   github   = "https://github.com/StaryDarkz"
   thm_url  = "https://tryhackme.com/p/StaryDarkz"
   ld_url   = "https://app.letsdefend.io/user/profile/StaryDarkz"
+  googleAnalytics = "G-0H33890XRQ"
 
 [menu]
   [[menu.main]]
