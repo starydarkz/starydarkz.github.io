@@ -10,7 +10,7 @@ readtime: "3"
 featured: false
 ---
 
-Hace mucho tiempo, antes de que las amenazas informaticas estuvieran en su auge, antes de que existieran amenazas como ransomware y antes de que la mayoria de las personas que estan leyendo este post hayan tenido una computadora, Eddy Willens que trabajaba para una compañia de seguros en Bélgica inserto uno de los 20,000 **diskettes** que se enviaron por correo a los asistentes que participaron en la conferencia sobre el SIDA de la Organizacion Mundial de la Salud en  Estocolmo, a peticion de su jefe quien le habia pedido que comprobara su contenido.
+Hace mucho tiempo, antes de que las amenazas informaticas estuvieran en su auge, antes de que existieran amenazas como ransomware y antes de que la mayoria de las personas que esten leyendo este post hayan tenido una computadora, Eddy Willens que trabajaba para una compañia de seguros en Bélgica inserto uno de los 20,000 **diskettes** que se enviaron por correo a los asistentes que participaron en la conferencia sobre el SIDA de la Organizacion Mundial de la Salud en  Estocolmo, a peticion de su jefe quien le habia pedido que comprobara su contenido.
 
 ![Diskette con el primer ransomware AIDS](https://media.cnn.com/api/v1/images/stellar/prod/210514101822-02-eddy-williems-ransomware.jpg?q=w_1600,h_900,x_0,y_0,c_fill/w_1316/f_webp)
 
@@ -18,7 +18,7 @@ Diskette con el primer ransomware AIDS
 
 Los **diskettes** que se distribuyeron contenían un programa para analizar el riesgo que podría tener cualquier persona de contraer SIDA.Pero ironicamente estos diskettes estaban infectados con el primer malware de tipo ransomware documentado hasta la fecha.
 
-Era diciembre del 1989, cuando Eddy Willems esperaba encontrar investigaciones médicas al cargar el contenido del disco. En cambio, se convirtió en víctima del primer ataque de ransomware.
+Era **diciembre del 1989**, cuando Eddy Willems esperaba encontrar investigaciones médicas al cargar el contenido del disco. En cambio, se convirtió en víctima del primer ataque de ransomware.
 
 ![Eddy Willems](https://www.shutterstock.com/editorial/image-editorial/ObT4Ya5dO2Dccd16MzgzNw==/eddy-willems-550nw-9628066a.jpg)
 
