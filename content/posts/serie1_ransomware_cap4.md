@@ -2,7 +2,7 @@
 title: "Serie Ransomware Deep Dive: Capitulo 4"
 date: 2026-06-10
 draft: false
-description: "La evolución del ransomware, análisis de muestras GPcode 2006 y 2010"
+description: "La evolución del ransomware, Generacion 2005 - 2012 y GPcode"
 cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap4_serieransomware.png?raw=true"
 categories: ["Serie de Investigación"]
 tags: ["Serie:Ransomware Deep Dive"]
