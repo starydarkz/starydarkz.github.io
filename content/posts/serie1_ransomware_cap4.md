@@ -1,13 +1,13 @@
 ---
 title: "Serie Ransomware Deep Dive: Capitulo 4"
 date: 2026-06-10
-draft: true
+draft: false
 description: "La evolución del ransomware, análisis de muestras GPcode 2006 y 2010"
 cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap4_serieransomware.png?raw=true"
 categories: ["Serie de Investigación"]
 tags: ["Serie:Ransomware Deep Dive"]
 readtime: "12"
-featured: true
+featured: false
 ---
 
 En este capitulo analizaremos las caracteristicas generales de los ransomware entre el 2005 - 2012, y tambien analizaremos una muestra de un ransomware creado en esa epoca para entender como funciónaban y si logramos deshacer el cifrado realizado por el ransomware. En esta etapa es donde el ransomware deja de ser una “prueba de concepto torpe” y empieza a convertirse en algo técnicamente funciónal, aunque todavía con fallos importantes.
