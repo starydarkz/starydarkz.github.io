@@ -32,7 +32,7 @@ Luego viene una etapa más agresiva y destructiva con ataques como WannaCry y No
 
 Despues de eso, el modelo cambia otra vez... Ya no se trata solo de infectar usuarios indiviruales, sino de atacar orgamizaciones grandes. Aqui nace el ransomware dirigido:
 
-- Ataqques manuales (los atacantes entran, exploran y luego cifran)
+- Ataques manuales (los atacantes entran, exploran y luego cifran)
 - Exigen rescates de millones de d dólares
 - Se enfocan en empresas críticas
 
