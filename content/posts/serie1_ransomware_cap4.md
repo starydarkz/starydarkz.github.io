@@ -25,7 +25,7 @@ Sin embargo, también se destacan algunas debilidades como:
 
 ![imagen 1](https://github.com/starydarkz/starydarkz.github.io/blob/main/images/image001.png?raw=true)
 
-![imagen 1](/images/image001.png)
+![imagen 1](/content/images/image001.png)
 
 
 Es una etapa de transición: **de “bloqueo básico” --> a “cifrado real pero imperfecto”**
