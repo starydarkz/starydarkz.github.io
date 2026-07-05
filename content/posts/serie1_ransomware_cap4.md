@@ -25,6 +25,9 @@ Sin embargo, también se destacan algunas debilidades como:
 
 ![imagen 1](https://github.com/starydarkz/starydarkz.github.io/blob/main/images/image001.png?raw=true)
 
+![imagen 1](/images/image001.png)
+
+
 Es una etapa de transición: **de “bloqueo básico” --> a “cifrado real pero imperfecto”**
 
 
@@ -261,8 +264,6 @@ Los cambios realizados en el registro constituyen una evidencia valiosa para rec
 
 Junto con los archivos temporales y la nota de rescate, estos artefactos permiten establecer una línea temporal de la infección y comprender las acciones ejecutadas por el ransomware en el sistema comprometido.
 {{< /alert >}}
-
-
 
 ## Referencias - Análisis de e9ff mediante herramientas online
 
