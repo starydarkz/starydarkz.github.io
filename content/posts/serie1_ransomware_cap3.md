@@ -3,7 +3,7 @@ title: "Serie Ransomware Deep Dive: Capitulo 3"
 date: 2026-05-08
 draft: false
 description: "La evolucion del ransomware, generaciones"
-cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap3_serieransomware.png?raw=true"
+cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/portada_cap3_serieransomware.png?raw=true"
 categories: ["Serie de Investigacion"]
 tags: ["Serie:Ransomware Deep Dive"]
 readtime: "5"

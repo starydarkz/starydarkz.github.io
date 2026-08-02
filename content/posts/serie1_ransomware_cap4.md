@@ -3,7 +3,7 @@ title: "Serie Ransomware Deep Dive: Capitulo 4"
 date: 2026-06-10
 draft: false
 description: "La evolución del ransomware, Generacion 2005 - 2012 y GPcode"
-cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/images/portada_cap4_serieransomware.png?raw=true"
+cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images//portada_cap4_serieransomware.png?raw=true"
 categories: ["Serie de Investigación"]
 tags: ["Serie:Ransomware Deep Dive"]
 readtime: "12"
@@ -23,9 +23,9 @@ Aquí ya vemos mejoras claras, principalmente:
 Sin embargo, también se destacan algunas debilidades como:
 
 
-![imagen 1](https://github.com/starydarkz/starydarkz.github.io/blob/main/images/image001.png?raw=true)
+![imagen 1](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image001.png?raw=true)
 
-![imagen 1](/content/images/image001.png)
+![imagen 1](/static/images/image001.png)
 
 
 Es una etapa de transición: **de “bloqueo básico” --> a “cifrado real pero imperfecto”**
