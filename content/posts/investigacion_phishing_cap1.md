@@ -12,11 +12,19 @@ featured: false
 
 # Multas falsas de la PGR: disección de un kit de smishing que roba tarjetas en tiempo real
 
-*Cómo una "multa de RD$ 430" esconde un panel operado por humanos, tráfico cifrado por WebSocket y pantallas falsas de 3-D Secure — y cómo lo desciframos.*
+*Cómo una "multa de RD$ 430" esconde un panel operado por humanos 💀, tráfico cifrado por WebSocket y pantallas falsas de 3-D Secure — y cómo lo desciframos.*
+
+Asi empieza este primer capitulo de la serie **Analizando Phishings**, todo comienza con una notificacion que me llego por SMS en donde supuestamente la "Procuraduría General de la República" me dice que tengo una multa de transito registrada, que debo consultar los detalles y pagar la misma.
+
+Como ciudadano decente, sabia que habia un error, pues en mi conocimiento no me han puesto ninguna multa xd. Ademas, viendo la URL ya podemos darnos cuenta de que es una pagina falsa, tipico comportamiento de phishing.
+
+![SMS NOTIFICATION](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image002.png?raw=true)
+
+Asi que decido iniar una investigacion del funcionamiento de esta pagina maliciosa y a continuacion se detallaran los resultados de la investigacion.
 
 ---
 
-## TL;DR
+Super super resumen de los hallazgos identificados:
 
 - **El señuelo:** un SMS avisa de una multa de tránsito pendiente con la Procuraduría General de la República (PGR) y enlaza a `multaspgr[.]top`, una copia del portal real `multas.pgr.gob.do`.
 - **La trampa:** la "multa" es siempre la misma (exceso de velocidad, RD$ 430.85, 50 % de descuento si pagas "ya"). El objetivo es la tarjeta.
@@ -26,11 +34,18 @@ featured: false
 - **Origen:** código con comentarios en chino y restos de una plantilla usada contra Bulgaria. Encaja con el ecosistema de *Phishing-as-a-Service* conocido como **Smishing Triad**.
 - **Lo desciframos:** las claves AES están fijas dentro del JavaScript. Publicamos los scripts para replicarlo.
 
----
+
 
 ## 1. El señuelo: una multa pequeña y urgente
 
-El dominio `multaspgr[.]top` imita al portal legítimo de consulta de multas (`multas.pgr.gob.do`): se quitan los puntos y el dominio gubernamental se cambia por `.top`, un TLD barato y muy usado en campañas masivas. Se registró el **20 de septiembre de 2026** (registrar GLOBAL ASSET DOMAINS INC., datos ocultos) y ese mismo día ya tenía certificado TLS. Para cuando lo analizamos tenía **dos días de vida**: estas campañas rotan dominios constantemente para esquivar los bloqueos.
+El dominio `multaspgr[.]top` imita al portal legítimo de consulta de multas (`multas.pgr.gob.do`): se quitan los puntos y el dominio gubernamental se cambia por `.top`, un TLD barato y muy usado en campañas masivas. 
+
+![Phishing Page](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image003.png?raw=true)
+
+![Secure Page](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image004.png?raw=true)
+
+
+Se registró el **20 de septiembre de 2026** (registrar GLOBAL ASSET DOMAINS INC., datos ocultos) y ese mismo día ya tenía certificado TLS. Para cuando lo analizamos tenía **dos días de vida**: estas campañas rotan dominios constantemente para esquivar los bloqueos.
 
 La víctima llega desde el enlace del mensaje a `hxxps://multaspgr[.]top/do/` y se encuentra una copia convincente del portal: logos de la PGR, el teléfono y el correo oficiales en el pie de página, la dirección del Centro de los Héroes y el logo del Ministerio Público.
 
