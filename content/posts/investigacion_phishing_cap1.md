@@ -14,46 +14,44 @@ featured: false
 
 *Cómo una "multa de RD$ 430" esconde un panel operado por humanos 💀, tráfico cifrado por WebSocket y pantallas falsas de 3-D Secure — y cómo lo desciframos.*
 
-Asi empieza este primer capitulo de la serie **Analizando Phishings**, todo comienza con una notificacion que me llego por SMS en donde supuestamente la "Procuraduría General de la República" me dice que tengo una multa de transito registrada, que debo consultar los detalles y pagar la misma.
+Así empieza este primer capítulo de la serie **Analizando Phishings**. Todo comienza con una notificación que me llegó por SMS, donde supuestamente la **Procuraduría General de la República** me dice que tengo una multa de tránsito registrada y que debo consultar los detalles y pagarla.
 
 Como ciudadano decente, sabia que habia un error, pues en mi conocimiento no me han puesto ninguna multa xd. Ademas, viendo la URL ya podemos darnos cuenta de que es una pagina falsa, tipico comportamiento de phishing.
 
 ![SMS NOTIFICATION](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image002.png?raw=true)
 
-Asi que decido iniar una investigacion del funcionamiento de esta pagina maliciosa y a continuacion se detallaran los resultados de la investigacion.
+Así que decidí iniciar una investigación del funcionamiento de esta página maliciosa. A continuación se detallan los resultados.
 
 ---
 
-Super super resumen de los hallazgos identificados:
+### Resumen rápido de los hallazgos
 
 - **El señuelo:** un SMS avisa de una multa de tránsito pendiente con la Procuraduría General de la República (PGR) y enlaza a `multaspgr[.]top`, una copia del portal real `multas.pgr.gob.do`.
-- **La trampa:** la "multa" es siempre la misma (exceso de velocidad, RD$ 430.85, 50 % de descuento si pagas "ya"). El objetivo es la tarjeta.
-- **Lo interesante:** no hay formularios ni POST. Cada tecla que escribe la víctima viaja **cifrada con AES por un WebSocket** a un operador que la está viendo **en vivo**, incluso si nunca pulsa "Enviar".
-- **El golpe final:** mientras la víctima espera, el operador usa la tarjeta y le muestra pantallas falsas de "verificación bancaria" para robarle el OTP, el PIN o que apruebe la operación en su app.
-- **Evasión:** el kit detecta sandboxes y navegadores automatizados y, si los detecta, ni se conecta a su servidor. any.run lo marcó como **"No threats"**.
-- **Origen:** código con comentarios en chino y restos de una plantilla usada contra Bulgaria. Encaja con el ecosistema de *Phishing-as-a-Service* conocido como **Smishing Triad**.
+- **La trampa:** la "multa" es siempre la misma (exceso de velocidad, RD$ 430.85, 50 % de descuento si pagas "ya"). El objetivo real es la tarjeta.
+- **Lo interesante:** no hay formularios ni `POST`. Cada tecla que escribe la víctima viaja **cifrada con AES por un WebSocket** a un operador que la está viendo **en vivo**, incluso si nunca pulsa "Enviar".
+- **El golpe final:** mientras la víctima espera, el operador usa la tarjeta y le muestra pantallas falsas de "verificación bancaria" para robarle el OTP, el PIN o para que apruebe la operación en su app.
+- **Evasión:** el kit detecta sandboxes y navegadores automatizados; si los detecta, ni siquiera se conecta a su servidor. Any.Run lo marcó como **"No threats"**.
+- **Origen:** el código incluye comentarios en chino y restos de una plantilla usada contra Bulgaria. Encaja con el ecosistema de *Phishing-as-a-Service* conocido como **Smishing Triad**.
 - **Lo desciframos:** las claves AES están fijas dentro del JavaScript. Publicamos los scripts para replicarlo.
 
 
 
 ## 1. La trampa: una multa pequeña y urgente
 
-El dominio `multaspgr[.]top` imita al portal legítimo de consulta de multas (`multas.pgr.gob.do`): se quitan los puntos y el dominio gubernamental se cambia por `.top`, un TLD barato y muy usado en campañas masivas. 
+El dominio `multaspgr[.]top` imita al portal legítimo de consulta de multas (`multas.pgr.gob.do`): se quitan los puntos y el dominio gubernamental se cambia por `.top`, un TLD barato y muy usado en campañas masivas.
 
-Pagina Falsa:
+Página falsa:
 ![Phishing Page](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image003.png?raw=true)
 
-Pagina Real:
+Página real:
 ![Secure Page](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image004.png?raw=true)
 
-Se registró el **20 de septiembre de 2026** (registrar GLOBAL ASSET DOMAINS INC., datos ocultos) y ese mismo día ya tenía certificado TLS. Para cuando lo analizamos tenía **dos días de vida**: estas campañas rotan dominios constantemente para esquivar los bloqueos.
+Se registró el **20 de septiembre de 2026** (registrado por GLOBAL ASSET DOMAINS INC., con datos ocultos) y ese mismo día ya tenía certificado TLS. Cuando lo analizamos, tenía **dos días de vida**: estas campañas rotan dominios constantemente para esquivar bloqueos.
 
-{{< alert type="info" title="Nota Tecnica: Perspectiva Forense" >}}
-
-Usando herramientas como https://web-check.xyz podemos realizar diversos analisis de la pagina web y ver lo resumido en forma de widgets, en este caso, con esto pudimos determinar cuando fue creado el dominio y cuando expira, normalmente los dominios recien creados suelen ser mas sospechozos ya que suelen ser creados justamente para realizar campañas de phishing.
+{{< alert type="info" title="Nota Técnica: perspectiva forense" >}}
+Usando herramientas como https://web-check.xyz podemos realizar diversos análisis de la página y resumirlos en widgets. En este caso, nos permitió determinar cuándo se creó el dominio y cuándo expira. Normalmente, los dominios recién creados son más sospechosos porque suelen estar pensados para campañas de phishing de corta duración.
 
 ![Tool 1](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image005.png?raw=true)
-
 {{< /alert >}}
 
 
@@ -81,13 +79,13 @@ El detalle de la fecha es fino: como la "infracción" ocurrió hace seis días y
 
 ---
 
-## 2. El truco está debajo: una SPA en Vue con un canal escondido
+## 2. El truco está debajo: una SPA en Vue con un canal oculto
 
-A primera vista, en el sandbox el sitio no hace nada sospechoso: descarga unos JS, CSS, cuatro PNG y una fuente de Google. 
+A primera vista, en el sandbox el sitio no hace nada sospechoso: descarga unos archivos JS, CSS, cuatro PNG y una fuente de Google.
 
-Se realizo una simulacion en la pagina WEB simulando ser una victima, el objetivo era poder analizar dinamicamente el comportamiento de la pagina web, ya sabemos que es phishing y que es una pagina falsa, pero... que mas podemos saber? A donde se envian esas credenciales? Se almacena Local? Bot de Telegram? C2 o algun canal externo?
+Se realizó una simulación del sitio web como si se tratara de una víctima para analizar dinámicamente su comportamiento. Sabemos que es phishing, pero ahora queríamos saber algo más: ¿a dónde se envían esas credenciales? ¿Se almacenan localmente? ¿Hay un bot de Telegram? ¿Hay un C2 o algún canal externo?
 
-Ningún formulario, ningún POST. Lo único raro es una conexión que queda abierta:
+Ningún formulario, ningún `POST`. Lo único raro es una conexión que queda abierta:
 
 ```
 wss://multaspgr[.]top/console/?uuid=bb14bfdb-…&shopHost=&EIO=4&transport=websocket
@@ -95,7 +93,7 @@ wss://multaspgr[.]top/console/?uuid=bb14bfdb-…&shopHost=&EIO=4&transport=webso
 
 Esa conexión es todo el phishing.
 
-**El stack (detalles tecnicos)**
+**El stack (detalles técnicos)**
 
 - **Vue 3 + Vue Router**, empaquetado con **Vite** (assets tipo `/do/assets/CQ87CKpW.js` con hash de 8 caracteres).
 - **Socket.IO v4** como canal con el servidor (`EIO=4`), con reconexión infinita y *fallback* a *long-polling*.
@@ -112,10 +110,7 @@ Los módulos principales:
 | `NAwAzj5k.js` | Runtime de Vue y librerías |
 
 
-Este es el resumen tecnico, pero no te prepcupes, iremos analizando con mas calma todo esto...
-
-
-Un detalle que se nota al desofuscar: las rutas internas no se llaman "inicio" o "pago", sino **`首页`** ("página de inicio"), **`资料页`** ("página de datos") y **`填信息页`** ("página para rellenar información"). **El desarrollador escribe en chino.**
+Un detalle que vemos al desofuscar es que las rutas internas no se llaman "inicio" ni "pago", sino **`首页`** ("página de inicio"), **`资料页`** ("página de datos") y **`填信息页`** ("página para rellenar información"). **El desarrollador escribe en chino.**
 
 ---
 
@@ -133,7 +128,7 @@ Un poco de contexto primero...
 
 - **Anti-análisis / anti-sandbox (evasión):** mecanismos para detectar que el entorno no es una víctima real (un sandbox, un navegador automatizado o una VM) y, en ese caso, comportarse de forma inofensiva. El más común en kits de phishing es la **ofuscación** del código (strings codificados, nombres sin sentido), que dificulta leerlo en frío.
 
-**En este kit** encontramos ofuscación con *obfuscator.io*, detección de navegadores headless y automatizados (si la detecta, no se conecta al C2), y cifrado AES del tráfico y del almacenamiento local. **No encontramos trampas `debugger` clásicas**: la protección principal es de evasión, no de anti-debugging en sentido estricto.
+**En este kit** encontramos ofuscación con *obfuscator.io*, detección de navegadores headless y automatizados (si la detecta, no se conecta al C2) y cifrado AES del tráfico y del almacenamiento local. **No encontramos trampas `debugger` clásicas**: la protección principal es de evasión, no de anti-debugging en sentido estricto.
 {{< /alert >}}
 
 Ahora si, vamos con el analisis...
@@ -145,15 +140,15 @@ El módulo principal incluye un **detector de navegadores automatizados** bastan
 - Render gráfico por software (SwiftShader, llvmpipe), típico de VMs.
 - Si los emojis se dibujan, cuántas fuentes y plugins hay, idiomas, permisos, batería, WebRTC…
 
-La idea es simple, detectar si quien interactua es un humano o un sistema automatizado de analisis dinamico, como una sandbox o una herramienta automatica.
+La idea es simple: detectar si quien interactúa es un humano o un sistema automatizado de análisis dinámico, como una sandbox o una herramienta automática.
 
-Cada comprobación suma a un puntaje. El código **CQBmPQ5D.js** seria el siguietne:
+Cada comprobación suma un puntaje. El código **CQBmPQ5D.js** sería el siguiente:
 ```js
 
 var h3=h2();const h4=.31,h5=async()=>{try{const n=await h3[b(1097)](!1);return{isSpider:(n?.[b(1386)]??0)>=h4}}catch{return{isSpider:!1}}};async function h6({menu:n,routers:m},t,l){return!(await h5())[b(1476)]&&(eY(),a6(t),ad()),{router:f6(n,m)}}
 ```
 
-Sin embargo, para poder analizarlo mejor y desofuscarlo, utilizando Claude Pro lo descodificamos de esta forma:
+Sin embargo, para analizarlo mejor y desofuscarlo, lo convertimos a una versión legible:
 
 ```js
 const THRESHOLD = 0.31;
@@ -533,8 +528,11 @@ Si tienes muestras de otros despliegues o del SMS, nos encantaría compararlas.
 - Bitdefender "Operation Road Trap" (vía Escudo Digital): https://www.escudodigital.com/en/cybersecurity/fake-traffic-fines-sms-global-smishing-campaign-targets-drivers-worldwide.html
 - headless-detector (open-source): https://github.com/andriyshevchenko/headless-detector
 - Certificate Transparency (Cert Spotter): https://api.certspotter.com/v1/issuances?domain=multaspgr.top&include_subdomains=true
-
+- Reporte de URLSCAN:  https://urlscan.io/result/01a0cfd9-045e-712b-aa9d-0395282d93fc/ : - - Reporte de web-check: https://web-check.xyz/check/multaspgr.top
+- Reporte de URLquery: https://urlquery.net/report/7a2346c3-3890-4305-8a55-93f5d6d47842 - Analisis
 ---
+
+
 
 ## Anexo: scripts
 
