@@ -195,12 +195,19 @@ Al cargar, el kit genera un UUID para la víctima, lo guarda (cifrado) en `local
 
 ### 4.2 Todo va cifrado… con la clave dentro del propio JS
 
+Aqui es donde se pone interesante, porque cuando vemos todas las conexiones que realiza la WEB, no vemos peticiones externas, pero este ultimo si nos parece interesante:
+
+![Any.run Analisis 1](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image006.png?raw=true)
+
+Al analizar el trafico HTTP podemos ver una comunicacion mediante websocket y todo esta cifrado:
+
+![Any.run Analisis 2](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image007.png?raw=true)
+
 Cada mensaje viaja como un evento Socket.IO:
 
 ```
 42["message","9J/UwM0nsmrdXqUVWny6zjo8nD559AWv58L4xtEANxJLMD1H…"]
 ```
-
 Ese base64 es **JSON cifrado con AES-128-CBC y padding PKCS7**. El problema (para ellos) es que la clave y el IV están escritos en el código:
 
 | Uso | Key | IV |
@@ -211,6 +218,8 @@ Ese base64 es **JSON cifrado con AES-128-CBC y padding PKCS7**. El problema (par
 Al ser key e IV fijos, el cifrado es **determinista**: el mismo mensaje produce siempre el mismo texto cifrado. Por eso, en la captura, 83 de 88 mensajes empiezan con los mismos 32 bytes: son todos `{"event":"changleField","data":{…`. Los mensajes de error del módulo de cifrado también están en chino: `加密失败` ("falló el cifrado"), `解密失败` ("falló el descifrado").
 
 El cifrado no protege nada frente a un analista; su función es que **un proxy, un IDS o un sandbox no vean datos de tarjeta en claro**.
+
+Spoiler: Crearemos  nuestros propios scripts para descifrar esta comunicacion mas adelante...
 
 ### 4.3 Qué se envía
 
@@ -223,7 +232,9 @@ El cifrado no protege nada frente a un analista; su función es que **un proxy, 
 | `submitCode` | Víctima → servidor | En las pantallas de "verificación" | OTP, PIN o código |
 | `operation` | Servidor → víctima | Cuando el operador decide | Rechazar, pedir un código, dar por completado |
 
-`changleField` (una errata de *changeField*) es una buena huella del kit. Y lo importante: **cerrar la página antes de pulsar "Enviar" no sirve de nada**. Los datos ya salieron.
+`changleField` (una errata de *changeField*) es una buena huella del kit (SI, PORQUE LOS MALOS TAMBIEN SE EQUIVOCAN AL ESCRIBIR CODIGO XD). Y lo importante: **cerrar la página antes de pulsar "Enviar" no sirve de nada**. Los datos ya salieron, mientras escribes los datos que te pide el atacante, en tiempo real esto se envia hacia el atacante, asi que el solo hecho de intentarlo o probar varias tarjetas de credito aunque no le des a Enviar, ya el atacante vio todo.
+
+Nota: Los datos descritos son de prueba usados para simular ser una victima. No, no son reales xd pero sirven para la demostracion.
 
 ---
 
