@@ -36,7 +36,7 @@ Super super resumen de los hallazgos identificados:
 
 
 
-## 1. El señuelo: una multa pequeña y urgente
+## 1. La trampa: una multa pequeña y urgente
 
 El dominio `multaspgr[.]top` imita al portal legítimo de consulta de multas (`multas.pgr.gob.do`): se quitan los puntos y el dominio gubernamental se cambia por `.top`, un TLD barato y muy usado en campañas masivas. 
 
@@ -81,9 +81,13 @@ El detalle de la fecha es fino: como la "infracción" ocurrió hace seis días y
 
 ---
 
-## 2. Bajo el capó: una SPA en Vue con un canal oculto
+## 2. Aquí es donde se pone bueno: Vue, Vite y un canal oculto
 
-A primera vista, en el sandbox el sitio no hace nada sospechoso: descarga unos JS, CSS, cuatro PNG y una fuente de Google. Ningún formulario, ningún POST. Lo único raro es una conexión que queda abierta:
+A primera vista, en el sandbox el sitio no hace nada sospechoso: descarga unos JS, CSS, cuatro PNG y una fuente de Google. 
+
+Se realizo una simulacion en la pagina WEB simulando ser una victima, el objetivo era poder analizar dinamicamente el comportamiento de la pagina web, ya sabemos que es phishing y que es una pagina falsa, pero... que mas podemos saber? A donde se envian esas credenciales? Se almacena Local? Bot de Telegram? C2 o algun canal externo?
+
+Ningún formulario, ningún POST. Lo único raro es una conexión que queda abierta:
 
 ```
 wss://multaspgr[.]top/console/?uuid=bb14bfdb-…&shopHost=&EIO=4&transport=websocket
@@ -91,7 +95,7 @@ wss://multaspgr[.]top/console/?uuid=bb14bfdb-…&shopHost=&EIO=4&transport=webso
 
 Esa conexión es todo el phishing.
 
-**El stack**
+**El stack (detalles tecnicos)**
 
 - **Vue 3 + Vue Router**, empaquetado con **Vite** (assets tipo `/do/assets/CQ87CKpW.js` con hash de 8 caracteres).
 - **Socket.IO v4** como canal con el servidor (`EIO=4`), con reconexión infinita y *fallback* a *long-polling*.
@@ -107,11 +111,28 @@ Los módulos principales:
 | `CQBmPQ5D.js` | El corazón: cifrado, conexión al C2, antibots, pantallas de 3-D Secure (262 KB una vez completo) |
 | `NAwAzj5k.js` | Runtime de Vue y librerías |
 
-Un detalle que se nota al desofuscar: las rutas internas no se llaman "inicio" o "pago", sino **`首页`** ("página de inicio"), **`资料页`** ("página de datos") y **`填信息页`** ("página para rellenar información"). El desarrollador escribe en chino.
+
+Este es el resumen tecnico, pero no te prepcupes, iremos analizando con mas calma todo esto...
+
+
+Un detalle que se nota al desofuscar: las rutas internas no se llaman "inicio" o "pago", sino **`首页`** ("página de inicio"), **`资料页`** ("página de datos") y **`填信息页`** ("página para rellenar información"). **El desarrollador escribe en chino.**
 
 ---
 
 ## 3. Primero, esconderse de los analistas
+
+Veamos ahora las técnicas de evasión y anti-análisis que usa la página para esconderse de sandboxes y analistas.
+
+{{< alert type="tip" title="Nota Tecnica: Perspectiva Forense: anti-forense, anti-debugging y anti-análisis " >}}
+
+- **Anti-forense:** técnicas para que queden menos rastros o para que la evidencia sea difícil de interpretar después del hecho. En un sitio web se ve como datos cifrados en el navegador (`localStorage` con claves hasheadas y valores en AES), tráfico cifrado dentro del WebSocket e infraestructura de vida corta (dominios que duran días). El objetivo es que, al revisar el equipo o los logs, el analista no encuentre datos legibles.
+
+- **Anti-debugging:** trucos para impedir o entorpecer que un analista inspeccione el código mientras se ejecuta, por ejemplo instrucciones `debugger` en bucle que congelan las DevTools, o comprobaciones que detectan si la consola está abierta.
+
+- **Anti-análisis / anti-sandbox (evasión):** mecanismos para detectar que el entorno no es una víctima real (un sandbox, un navegador automatizado o una VM) y, en ese caso, comportarse de forma inofensiva. El más común en kits de phishing es la **ofuscación** del código (strings codificados, nombres sin sentido), que dificulta leerlo en frío.
+
+**En este kit** encontramos ofuscación con *obfuscator.io*, detección de navegadores headless y automatizados (si la detecta, no se conecta al C2), y cifrado AES del tráfico y del almacenamiento local. **No encontramos trampas `debugger` clásicas**: la protección principal es de evasión, no de anti-debugging en sentido estricto.
+{{< /alert >}}
 
 El módulo principal incluye un **detector de navegadores automatizados** bastante completo. Antes de hacer nada, comprueba:
 
