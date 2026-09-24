@@ -40,12 +40,20 @@ Super super resumen de los hallazgos identificados:
 
 El dominio `multaspgr[.]top` imita al portal legítimo de consulta de multas (`multas.pgr.gob.do`): se quitan los puntos y el dominio gubernamental se cambia por `.top`, un TLD barato y muy usado en campañas masivas. 
 
+Pagina Falsa:
 ![Phishing Page](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image003.png?raw=true)
 
+Pagina Real:
 ![Secure Page](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image004.png?raw=true)
 
-
 Se registró el **20 de septiembre de 2026** (registrar GLOBAL ASSET DOMAINS INC., datos ocultos) y ese mismo día ya tenía certificado TLS. Para cuando lo analizamos tenía **dos días de vida**: estas campañas rotan dominios constantemente para esquivar los bloqueos.
+
+{{< alert type="info" title="Nota Tecnica: Perspectiva Forense" >}}
+
+Usando herramientas como https://web-check.xyz podemos realizar diversos analisis de la pagina web y ver lo resumido en forma de widgets
+
+{{< /alert >}}
+
 
 La víctima llega desde el enlace del mensaje a `hxxps://multaspgr[.]top/do/` y se encuentra una copia convincente del portal: logos de la PGR, el teléfono y el correo oficiales en el pie de página, la dirección del Centro de los Héroes y el logo del Ministerio Público.
 
