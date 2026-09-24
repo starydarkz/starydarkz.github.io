@@ -3,7 +3,7 @@ title: "Serie Analisis de Phishing: Capitulo 1"
 date: 2026-09-24
 draft: false
 description: "Cómo una ''multa de RD$ 430'' esconde un panel operado por humanos 💀, tráfico cifrado por WebSocket y pantallas falsas de 3-D Secure — y cómo lo desciframos."
-cover: ""
+cover: "https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image008.png?raw=true"
 categories: ["Phishing"]
 tags: ["Serie:Investigacion Phishing"]
 readtime: "1"
