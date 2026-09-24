@@ -81,7 +81,7 @@ El detalle de la fecha es fino: como la "infracción" ocurrió hace seis días y
 
 ---
 
-## 2. Aquí es donde se pone bueno: Vue, Vite y un canal oculto
+## 2. El truco está debajo: una SPA en Vue con un canal escondido
 
 A primera vista, en el sandbox el sitio no hace nada sospechoso: descarga unos JS, CSS, cuatro PNG y una fuente de Google. 
 
@@ -125,6 +125,8 @@ Veamos ahora las técnicas de evasión y anti-análisis que usa la página para 
 
 {{< alert type="tip" title="Nota Tecnica: Perspectiva Forense: anti-forense, anti-debugging y anti-análisis " >}}
 
+Un poco de contexto primero...
+
 - **Anti-forense:** técnicas para que queden menos rastros o para que la evidencia sea difícil de interpretar después del hecho. En un sitio web se ve como datos cifrados en el navegador (`localStorage` con claves hasheadas y valores en AES), tráfico cifrado dentro del WebSocket e infraestructura de vida corta (dominios que duran días). El objetivo es que, al revisar el equipo o los logs, el analista no encuentre datos legibles.
 
 - **Anti-debugging:** trucos para impedir o entorpecer que un analista inspeccione el código mientras se ejecuta, por ejemplo instrucciones `debugger` en bucle que congelan las DevTools, o comprobaciones que detectan si la consola está abierta.
@@ -134,6 +136,8 @@ Veamos ahora las técnicas de evasión y anti-análisis que usa la página para 
 **En este kit** encontramos ofuscación con *obfuscator.io*, detección de navegadores headless y automatizados (si la detecta, no se conecta al C2), y cifrado AES del tráfico y del almacenamiento local. **No encontramos trampas `debugger` clásicas**: la protección principal es de evasión, no de anti-debugging en sentido estricto.
 {{< /alert >}}
 
+Ahora si, vamos con el analisis...
+
 El módulo principal incluye un **detector de navegadores automatizados** bastante completo. Antes de hacer nada, comprueba:
 
 - `navigator.webdriver` y los rastros de Selenium, Puppeteer, Playwright y PhantomJS.
@@ -141,7 +145,15 @@ El módulo principal incluye un **detector de navegadores automatizados** bastan
 - Render gráfico por software (SwiftShader, llvmpipe), típico de VMs.
 - Si los emojis se dibujan, cuántas fuentes y plugins hay, idiomas, permisos, batería, WebRTC…
 
-Cada comprobación suma a un puntaje. El código, ya desofuscado, es este:
+La idea es simple, detectar si quien interactua es un humano o un sistema automatizado de analisis dinamico, como una sandbox o una herramienta automatica.
+
+Cada comprobación suma a un puntaje. El código **CQBmPQ5D.js** seria el siguietne:
+```js
+
+var h3=h2();const h4=.31,h5=async()=>{try{const n=await h3[b(1097)](!1);return{isSpider:(n?.[b(1386)]??0)>=h4}}catch{return{isSpider:!1}}};async function h6({menu:n,routers:m},t,l){return!(await h5())[b(1476)]&&(eY(),a6(t),ad()),{router:f6(n,m)}}
+```
+
+Sin embargo, para poder analizarlo mejor y desofuscarlo, utilizando Claude Pro lo descodificamos de esta forma:
 
 ```js
 const THRESHOLD = 0.31;
@@ -160,13 +172,15 @@ async function init({ menu, routers }, config) {
 }
 ```
 
-Si el navegador "huele" a automatización, la página se ve igual, pero **nunca abre el canal con el servidor**. Para un escáner no hay nada malicioso que ver. Eso explica el veredicto "No threats" de any.run.
+Si el navegador "huele" a automatización, la página se ve igual, pero **nunca abre el canal con el servidor**. Para un escáner no hay nada malicioso que ver. Eso explica el veredicto "No threats" de any.run de algunos analisis que realice.
 
 El detector no es original: expone los mismos identificadores (`window.__headlessDetectionScore`, `data-headless-score`) que el proyecto open-source [headless-detector](https://github.com/andriyshevchenko/headless-detector). Los autores lo han incrustado tal cual.
 
 ---
 
 ## 4. El canal: un keylogger con AES
+
+Supongamos que pasamos las pruebas de humanidad y anti-sandboxs y continuamos con el flujo de la pagina, ya introducimos los datos que pide el atacante, pero que sucede por debajo que el usuario no ve y como funciona?.
 
 ### 4.1 Cómo se conecta
 
