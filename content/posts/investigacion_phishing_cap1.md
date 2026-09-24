@@ -1,7 +1,7 @@
 ---
-title: "Primer post"
+title: "Serie Analisis de Phishing: Capitulo 1"
 date: 2026-09-24
-draft: true
+draft: false
 description: "Prueba de primer post"
 cover: ""
 categories: ["Phishing"]
@@ -50,7 +50,9 @@ Se registró el **20 de septiembre de 2026** (registrar GLOBAL ASSET DOMAINS INC
 
 {{< alert type="info" title="Nota Tecnica: Perspectiva Forense" >}}
 
-Usando herramientas como https://web-check.xyz podemos realizar diversos analisis de la pagina web y ver lo resumido en forma de widgets
+Usando herramientas como https://web-check.xyz podemos realizar diversos analisis de la pagina web y ver lo resumido en forma de widgets, en este caso, con esto pudimos determinar cuando fue creado el dominio y cuando expira, normalmente los dominios recien creados suelen ser mas sospechozos ya que suelen ser creados justamente para realizar campañas de phishing.
+
+![Tool 1](https://github.com/starydarkz/starydarkz.github.io/blob/main/static/images/image005.png?raw=true)
 
 {{< /alert >}}
 
