@@ -14,7 +14,11 @@ Durante la historia los ataques de tipo ransomware han evolucionado bastante y s
 
 Al inicio, el ransomware era bastante rudimentario, uno de los primeros casos conocidos fue el llamado AIDS Trojan (tambien conocido como el ransomware del SIDA), que se distribuía en disquetes fisicos, este no cifraba archivos directamente sino que ocultaba los archivos en el disco C y cifraba su nombre para que las victimas no pudieran encontrarlos y por supuesto pedia un pago de rescate por correo.
 
+**En los años 2000...**
+
 Con la expansión de internet en los **2000**, el ransomware empezó a cambiar. Aparecieron variantes que ya usaban criptografia real para cifrar archivos, aunque aun con errores o claves recuperables. En esta etapa, el objetivo era mas "masivo", enfocado mas en infectar a muchos usuarios individuales con pagos relativamente pequeños.
+
+**2013...**
 
 El gran salto ocurre alrededor del **2013** con familias como CryptoLocker, desde aqui empezamos a ver:
 
@@ -24,11 +28,15 @@ El gran salto ocurre alrededor del **2013** con familias como CryptoLocker, desd
 
 Desde ahí, el ransomware se vuelve un negocio serio...
 
+**2017...**
+
 Luego viene una etapa más agresiva y destructiva con ataques como WannaCry y NotPetya en **2017**. Estos ataques marcaron un antes y un despues porque:
 
 - Se propagaban automaticamente (caracteristicas de malware tipo gusanos)
 - Afectaron hospitales, empresas y gobiernos
 - Demostraron el impacto global de este tipo de ataques
+
+**2017+**
 
 Despues de eso, el modelo cambia otra vez... Ya no se trata solo de infectar usuarios indiviruales, sino de atacar orgamizaciones grandes. Aqui nace el ransomware dirigido:
 
