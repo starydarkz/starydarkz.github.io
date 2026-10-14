@@ -10,7 +10,7 @@ readtime: "3"
 featured: false
 ---
 
-Antes de empezar a analizar como funcionan los ransomware, su historia y demas objetivos dentro de esta investigacion, tenemos que definir que es un ransomware y cuales tipos de ransomware existen, esto nos podra ayudar a tener una idea mas clara de lo que realmente son y como funcionan.
+Antes de empezar a analizar como funcionan el ransomware, su historia y demas objetivos dentro de esta investigacion, vamos a definir que es un ransomware y cuales tipos existen, esto nos ayudara a tener una idea mas clara de lo que realmente son y como funcionan.
 
 Segun microsoft detalla [aqui](https://www.microsoft.com/es-mx/security/business/security-101/what-is-ransomware), El ransomware es un tipo de software malintencionado, o malware, que los ciberdelincuentes usan para bloquear el acceso a los datos críticos de una víctima, destruirlos o publicarlos a menos que se pague un rescate.     
 
