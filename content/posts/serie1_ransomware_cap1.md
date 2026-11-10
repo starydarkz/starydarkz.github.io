@@ -1,5 +1,5 @@
 ---
-title: "Serie Ransomware Deep Dive: Capitulo 1"
+title: "Ransomware Deep Dive Capitulo 1: Fundamentos de que es el Ransomware"
 date: 2026-05-04
 draft: false
 description: "Fundamentos de que es el Ransomware"

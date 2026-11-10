@@ -1,5 +1,5 @@
 ---
-title: "Serie Ransomware Deep Dive: Capitulo 3"
+title: "Ransomware Deep Dive Capitulo 3: La evolucion del ransomware, generaciones"
 date: 2026-05-08
 draft: false
 description: "La evolucion del ransomware, generaciones"
